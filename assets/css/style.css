@@ -1,0 +1,42 @@
+/* Color Theme Swatches in Hex */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  cursor: url(../media/cursorGray.png), auto;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 200vh;
+  width: 100vw;
+  background-color: #2d3436;
+  background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+  background-color: #f9fcff;
+  background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
+  background-color: #5de6de;
+  background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #0c0c0c;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  background-color: #0c0c0c;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 3.75px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #1a59d8;
+}
+/*# sourceMappingURL=style.css.map */

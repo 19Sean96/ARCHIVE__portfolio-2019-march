@@ -1,0 +1,87 @@
+/* Color Theme Swatches in Hex */
+$flat-blue: #1a59d8;
+
+$flat-yellow: #f2b707;
+$flat-yellow-accent: #f2a007;
+
+$flat-orange: #f2441d;
+
+$flat-red: #bf0313;
+$flat-red-accent: #d82433;
+$flat-red-dark: #720202;
+
+$flat-black: #0c0c0c;
+$flat-white: #eff0f2;
+
+$silk-blue-1: #0453f2;
+$silk-blue-2: #03173f;
+$silk-blue-3: #046bf2;
+$silk-blue-4: #0355bf;
+$silk-blue-5: #023e8c;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 20px;
+}
+
+body {
+    cursor: url(../media/cursorGray.png), auto;
+
+
+    overflow-x: hidden;
+    position: relative;
+    min-height: 200vh;
+    width: 100vw;
+    background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+    background-color: #f9fcff;
+    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
+    background-color: #5de6de;
+background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background-color: $flat-black;
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        background-color: $flat-black;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 3.75px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: $flat-blue;
+    }
+}
+
+// h1 {
+//     width: 100%;
+//     text-align: center;
+//     color: $flat-black;
+//     position: absolute;
+//     top: 25%;
+//     transform: translate(-50%, -50%);
+//     animation-duration: 1.75s;
+//     animation-delay: .5s;
+//     animation-timing-function: cubic-bezier(.39,.09,0,1.25);
+// }
+
+// p {
+//     width: 100%;
+//     text-align: center;
+//     color: $flat-red-dark;
+//     position: absolute;
+//     top: 30%;
+//     transform: translate(-50%, -50%);
+//     animation-duration: 1.5s;
+//     animation-delay: 1.25s;
+//     animation-timing-function: cubic-bezier(.39,.09,0,1.25);
+// }
