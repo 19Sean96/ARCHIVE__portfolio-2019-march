@@ -24,6 +24,7 @@ $silk-blue-5: rgb(2, 62, 140);
     margin: 0;
     padding: 0;
     font-family: 'Roboto Slab', serif;
+    cursor: none;
 }
 
 html {
@@ -37,11 +38,13 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 body {
+    // cursor: none;
     overflow-x: hidden;
     position: relative;
     min-height: 200vh;
     min-width: 100vw;
-
+    background-color: #130f40;
+    background-image: linear-gradient(45deg, $silk-blue-5 0%, $silk-blue-3 57%, $flat-black 57%);
 
     &::-webkit-scrollbar-track {
         box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -61,13 +64,29 @@ body {
     }
 }
 
+.cursor {
+    pointer-events: none;
+    position: fixed;
+    z-index: 999999999;
+    width: 1rem;
+    height: 1rem;
+    background-color: $flat-white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    // transition: .025s all;
+
+}
 
 
 .headline {
 
-    background-color: #5de6de;
-    background-image: linear-gradient(315deg, #667eea   0%, #764ba2 74%);
-    background-image: linear-gradient(315deg, #2d3436 0%, rgb(0, 0, 0) 74%);
+    background: repeating-linear-gradient(
+                        45deg,
+                        rgba($flat-white,.75),
+                        rgba($flat-white,.75) .1rem,
+                        rgba(0,0,0,0) .1rem,
+                        rgba(0,0,0,0) 30rem
+                    );
     height: 400vh;
 
     .left-background {
@@ -76,7 +95,7 @@ body {
         top: 2rem;
         z-index: 5;
         height: 200vh;
-        width: 10vw;
+        width: 19.2rem;
         background-color: $flat-white;
         background: repeating-linear-gradient(
             45deg,
@@ -90,24 +109,66 @@ body {
 
         .nav-list {
             position: fixed;
-            left: 5.25rem;
-            width: 14.25vw;
+            // background-color: lightcoral;
+            z-index: 1000;
+            // left:  calc(1rem + 10vw);
+            width: 40rem;
             height: 100%;
-            // background-color: $flat-yellow;
 
             &-item {
+                text-rendering: geometricPrecision;
                 position: absolute;
+                z-index: 400;
                 top: 15rem;
-                left: 110%;
+                left: 70%;
                 line-height: 1.75;
-                color: $flat-black;
+                color: $flat-yellow-accent;
                 text-decoration: none;
                 font-size: 4rem;
-                // background-color: $flat-white;
+                background-color: $flat-black;
                 width: 100%;
                 text-align: left;
                 text-transform: capitalize;
+                font-weight: 800;
                 transition: .125s all linear;
+
+                &:not(#resume)::before {
+                    z-index: -1;
+                    content: '';
+                    font-size: 3rem;
+                    position: absolute;
+                    bottom: 1.25rem;
+                    left: -1rem;
+                    width: 0;
+                    height: 2.25rem;
+                    background-color: $flat-yellow;
+                    transition: 
+                                .1s width .1s;
+                    overflow: hidden;
+                }
+
+                &:not(#resume)::after {
+                    z-index: -1;
+                    content: '';
+                    font-size: 3rem;
+                    position: absolute;
+                    top: 1.25rem;
+                    right: 1rem;
+                    width: 0;
+                    height: 2.25rem;
+                    background-color: $flat-yellow;
+                    transition: 
+                                .1s width .1s;
+                    overflow: hidden;
+                }
+
+                &:not(#resume):hover::before,
+                &:not(#resume):hover::after {
+                    width: 100%;
+                    transition: .3s width ease-in-out;
+                }
+
+
             }
 
             #bio {
@@ -115,9 +176,11 @@ body {
                 top: 17.5rem;
                 // background-color: #0355bf;
                 // transform: rotate(90deg);
-                color: $flat-yellow;
+                // color: $flat-red-dark;
                 transform: rotate(0);
-
+                &:hover {
+                    color: $flat-black;
+                }
             }
 
             #skills {
@@ -125,56 +188,95 @@ body {
                 top: 25rem;
                 // color: $flat-white;
                 animation-delay: .5s;
-                color: $flat-yellow;
-
+                // color: $flat-red-dark;
+                &:hover {
+                    color: $flat-black;
+                }
             }
 
             #projects {
                 // font-size: 8rem;
                 // text-transform: uppercase;
                 top: 32.5rem;
-                color: $flat-yellow;
+                // color: $flat-red-accent;
                 animation-delay: 1s;
-
+                &:hover {
+                    color: $flat-black;
+                }
             }
 
             #contact {
                 top: 40rem;
                 animation-delay: 1.5s;
-                color: $flat-yellow;
+                // color: $flat-red-accent;
+                &:hover {
+                    color: $flat-black;
+                }
             }
 
             #resume {
-                top: 80rem;
+                z-index: 50000;
+                top: 60rem;
                 left: 0;
-                background-color: $flat-white;
+                color: $flat-white;
                 animation-delay: 2s;
                 text-align: left;
                 padding-left: 1rem;
                 text-transform: uppercase;
-                color: $flat-yellow;
-                // text-align: r
+                background-color: $flat-yellow-accent;
+                border-radius: 0rem;
+
+                &:before {
+                    position: absolute;
+                    content: 'Click To Download_';
+                    font-size: 2rem;
+                    color: $flat-black;
+                    text-align: right;
+                    overflow: hidden;
+                    vertical-align: bottom;
+                    line-height: 1.5;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 0%;
+                    background-color: $flat-white;
+                    // border: .2rem solid $flat-yellow-accent;
+                    transition: .25s all;
+                }
+
+                &:hover {
+                    // background-color: $flat-white;
+                    // color: $flat-red-accent;
+                    // border-radius: 1rem;
+
+                    &::before {
+                        height: 100%;
+
+                    }
+                }
             }
         }
     }
 
     .name {
-        font-size: 8.5rem;
+        text-rendering: geometricPrecision;
+        pointer-events: none;
+        display: block;
+        font-size: calc(8.5rem + (100vw *.01));
         font-weight: 100;
         bottom: -.5rem;
-        letter-spacing: .5rem;
+        letter-spacing: .3rem;
         text-transform: capitalize;
         position: absolute;
         z-index: 300;
         right: -12 rem;
-        width: 500%;
+        // width: 500%;
         &-container {
             position: fixed;
             z-index: 200;
             top: 2rem;
             left: 2rem;
-            width: 40%;
-            background-color: $flat-white;
+            width: 100%;
             height: 12.5rem;
 
 
@@ -182,11 +284,11 @@ body {
                 content: "";
                 position: absolute;
                 z-index: 100;
-                width: 100%;
+                width: 19.2rem;
                 height: 100%;
-                top: 5rem;
-                left: 5.25rem;
-                background-color: $flat-black;
+                top: 0rem;
+                left: 0rem;
+                background-color: $flat-white;
             }
         }
     }
