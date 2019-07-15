@@ -22,21 +22,48 @@ window.scroll({
   });
   let topPos;
   const name = $('.name-container');
+  let prevPos;
 
 
   window.onscroll = function () {
     let position = document.documentElement.scrollTop || document.body.scrollTop;
-
-    topPos = (position / 400);
+    let topPos2;
+    topPos = (position / 500);
     console.log(topPos);
-    $('#bio').css({
-        'left': `${110 - (position / 10)}%`,
-        'top': `${17.5 - (Math.pow(17.5, (topPos)))}rem`
-    });
-    $('#skills').css('left', `${110 + (position / 12)}%`);
-    $('#projects').css('left', `${110 + (position / 9)}%`);
-    $('#contact').css('left', `${110 + (position / 15)}%`);
+    console.log(prevPos);
+    console.log((topPos * 2) - prevPos);
+    if (topPos <= 2) {
+        $('#bio').css({
+            'left': `${110 - (position / 20)}%`,
+            'top': `${17.5 + (topPos * 2)}rem`
+        });
+        $('#skills').css({
+            'left': `${110 - (position / 20)}%`,
+            'top': `${25 + (topPos * 1.35)}rem`
+        });
+        $('#projects').css({
+            'left': `${110 - (position / 20)}%`,
+            'top': `${32.5 + (topPos * .75)}rem`
+        });
+        $('#contact').css({
+            'left': `${110 - (position / 20)}%`,
+            'top': `${40}rem`
+        });
+    } else if (topPos > 2 && topPos <= 3) {
+        $('#bio').css('top', `${21.5}rem`);
+        $('#skills').css('top', `${27.7}rem`);
+        $('#projects').css('top', `${34}rem`);
+        $('#contact').css('top', `${40}rem`);
 
+    } else {
+        let x = ((topPos * 2) - prevPos);
+        $('#bio').css('top', `${21.5 - x}rem`);
+        $('#skills').css('top', `${27.7 - x}rem`);
+        $('#projects').css('top', `${34 - x}rem`);
+        $('#contact').css('top', `${40 - x}rem`);
+    }
+ 
+    prevPos = topPos;
     // console.log(position);
     // console.log(name);
     if (position <= 100) {
