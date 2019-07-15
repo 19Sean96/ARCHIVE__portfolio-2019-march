@@ -1,30 +1,31 @@
 /* Color Theme Swatches in Hex */
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto Slab', serif;
 }
 
 html {
-  font-size: 20px;
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
 }
 
 body {
-  cursor: url(../media/cursorGray.png), auto;
   overflow-x: hidden;
   position: relative;
   min-height: 200vh;
-  width: 100vw;
-  background-color: #2d3436;
-  background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
-  background-color: #f9fcff;
-  background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
-  background-color: #5de6de;
-  background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+  min-width: 100vw;
 }
 
 body::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   background-color: #0c0c0c;
 }
@@ -36,7 +37,139 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   border-radius: 3.75px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0px 0 6px rgba(239, 240, 242, 0.4);
+          box-shadow: inset 0px 0 6px rgba(239, 240, 242, 0.4);
   background-color: #1a59d8;
+}
+
+.headline {
+  background-color: #5de6de;
+  background-image: linear-gradient(315deg, #667eea 0%, #764ba2 74%);
+  background-image: linear-gradient(315deg, #2d3436 0%, black 74%);
+  height: 175vh;
+}
+
+.headline .left-background {
+  position: fixed;
+  left: 2rem;
+  top: 2rem;
+  z-index: 5;
+  height: 200vh;
+  width: 10vw;
+  background-color: #eff0f2;
+  background: repeating-linear-gradient(45deg, #0c0c0c, #0c0c0c 2.5rem, #eff0f2 2.5rem, #eff0f2 5rem);
+  background-size: cover;
+}
+
+.headline .left-background .nav-list {
+  position: fixed;
+  left: 5.25rem;
+  width: 14.25vw;
+  height: 100%;
+}
+
+.headline .left-background .nav-list-item {
+  position: absolute;
+  top: 15rem;
+  left: 110%;
+  line-height: 1.75;
+  color: #0c0c0c;
+  text-decoration: none;
+  font-size: 4rem;
+  width: 100%;
+  text-align: left;
+  text-transform: capitalize;
+  -webkit-transition: .125s all linear;
+  transition: .125s all linear;
+}
+
+.headline .left-background .nav-list #bio {
+  top: 17.5rem;
+  color: #f2b707;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.headline .left-background .nav-list #skills {
+  top: 25rem;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+  color: #f2b707;
+}
+
+.headline .left-background .nav-list #projects {
+  top: 32.5rem;
+  color: #f2b707;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.headline .left-background .nav-list #contact {
+  top: 40rem;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  color: #f2b707;
+}
+
+.headline .left-background .nav-list #resume {
+  top: 80rem;
+  left: 0;
+  background-color: #eff0f2;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  text-align: left;
+  padding-left: 1rem;
+  text-transform: uppercase;
+  color: #f2b707;
+}
+
+.headline .name {
+  font-size: 8.5rem;
+  font-weight: 100;
+  bottom: -.5rem;
+  letter-spacing: .5rem;
+  text-transform: capitalize;
+  position: absolute;
+  z-index: 300;
+  right: -12 rem;
+  width: 500%;
+}
+
+.headline .name-container {
+  position: fixed;
+  z-index: 200;
+  top: 2rem;
+  left: 2rem;
+  width: 40%;
+  background-color: #eff0f2;
+  height: 12.5rem;
+}
+
+.headline .name-container::before {
+  content: "";
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  top: 5rem;
+  left: 5.25rem;
+  background-color: #0c0c0c;
+}
+
+.white-text {
+  font-family: inherit;
+  color: #eff0f2;
+  font-weight: 200;
+}
+
+.shake {
+  -webkit-animation-delay: 0s !important;
+          animation-delay: 0s !important;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
 }
 /*# sourceMappingURL=style.css.map */
