@@ -23,18 +23,22 @@ $silk-blue-5: rgb(2, 62, 140);
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     cursor: none;
 }
 
 html {
     font-size: 10px;
     scroll-behavior: smooth;
-
 }
 
-h1,h2,h3,h4,h5,h6 {
-    font-family: 'Raleway', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway", sans-serif;
 }
 
 body {
@@ -44,7 +48,12 @@ body {
     min-height: 200vh;
     min-width: 100vw;
     background-color: #130f40;
-    background-image: linear-gradient(45deg, $silk-blue-5 0%, $silk-blue-3 57%, $flat-black 57%);
+    background-image: linear-gradient(
+        45deg,
+        $silk-blue-5 0%,
+        $silk-blue-3 57%,
+        $flat-black 57%
+    );
 
     &::-webkit-scrollbar-track {
         box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -59,8 +68,8 @@ body {
 
     &::-webkit-scrollbar-thumb {
         border-radius: 3.75px;
-        box-shadow:inset 0px 0 6px rgba($flat-white, 0.4);
-        background-color: $flat-blue;
+        box-shadow: inset 0px 0 6px rgba($flat-white, 0.4);
+        background-color: $flat-red-accent;
     }
 }
 
@@ -73,21 +82,91 @@ body {
     background-color: $flat-white;
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    // transition: .025s all;
 
+    &::before {
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        border: 0.2rem solid $flat-red;
+        transition: 0.5s all 0.25s;
+    }
 }
 
+.cursor-2 {
+    pointer-events: none;
+    position: fixed;
+    z-index: 999999999;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+    border: 0.4rem solid $flat-red-accent;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.075s all;
+    animation: pulse 500ms infinite alternate;
+
+    &::before {
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+        border: 0.2rem solid $flat-orange;
+        transition: 0.5s all 0.25s;
+        animation: pulse2 350ms infinite alternate ease-in-out;
+    }
+}
+
+@keyframes pulse {
+    to {
+        transform: translate(-50%, -50%) scale(1.25);
+    }
+}
+
+@keyframes pulse2 {
+    to {
+        // transform: translate(-50%, -50%) scale(2.5);
+        height: 3rem;
+        width: 3rem;
+    }
+}
+
+.name {
+    text-rendering: geometricPrecision;
+    color: $flat-white;
+    font-weight: 100;
+    font-size: 5rem;
+
+    &-container {
+        display: inline-block;
+        position: absolute;
+        top: 5%;
+        left: 70%;
+        transform: translate3d(0rem, 50rem, 0px);
+        transition: 0.125s all ease-out;
+    }
+}
 
 .headline {
-
     background: repeating-linear-gradient(
-                        45deg,
-                        rgba($flat-white,.75),
-                        rgba($flat-white,.75) .1rem,
-                        rgba(0,0,0,0) .1rem,
-                        rgba(0,0,0,0) 30rem
-                    );
+        45deg,
+        rgba($flat-white, 0.75),
+        rgba($flat-white, 0.75) 0.1rem,
+        rgba(0, 0, 0, 0) 0.1rem,
+        rgba(0, 0, 0, 0) 30rem
+    );
     height: 400vh;
+    width: 100vw;
 
     .left-background {
         position: fixed;
@@ -116,6 +195,8 @@ body {
             height: 100%;
 
             &-item {
+                display: block;
+                padding-left: 2rem;
                 text-rendering: geometricPrecision;
                 position: absolute;
                 z-index: 400;
@@ -130,11 +211,13 @@ body {
                 text-align: left;
                 text-transform: capitalize;
                 font-weight: 800;
-                transition: .125s all linear;
+                transition: 0.2s top ease-out, 0.2s left ease-out,
+                    0.125s color ease-out;
+                // animation: moveAround 1s infinite alternate;
 
                 &:not(#resume)::before {
                     z-index: -1;
-                    content: '';
+                    content: "";
                     font-size: 3rem;
                     position: absolute;
                     bottom: 1.25rem;
@@ -142,14 +225,13 @@ body {
                     width: 0;
                     height: 2.25rem;
                     background-color: $flat-yellow;
-                    transition: 
-                                .1s width .1s;
+                    transition: 0.1s width 0.1s;
                     overflow: hidden;
                 }
 
                 &:not(#resume)::after {
                     z-index: -1;
-                    content: '';
+                    content: "";
                     font-size: 3rem;
                     position: absolute;
                     top: 1.25rem;
@@ -157,48 +239,34 @@ body {
                     width: 0;
                     height: 2.25rem;
                     background-color: $flat-yellow;
-                    transition: 
-                                .1s width .1s;
+                    transition: 0.1s width 0.1s;
                     overflow: hidden;
                 }
 
                 &:not(#resume):hover::before,
                 &:not(#resume):hover::after {
                     width: 100%;
-                    transition: .3s width ease-in-out;
+                    transition: 0.3s width ease-in-out;
                 }
-
-
             }
 
             #bio {
-                // font-size: 7.5rem;
                 top: 17.5rem;
-                // background-color: #0355bf;
-                // transform: rotate(90deg);
-                // color: $flat-red-dark;
-                transform: rotate(0);
                 &:hover {
                     color: $flat-black;
                 }
             }
 
             #skills {
-                // font-size: 6.5rem;
                 top: 25rem;
-                // color: $flat-white;
-                animation-delay: .5s;
-                // color: $flat-red-dark;
+                animation-delay: 0.5s;
                 &:hover {
                     color: $flat-black;
                 }
             }
 
             #projects {
-                // font-size: 8rem;
-                // text-transform: uppercase;
                 top: 32.5rem;
-                // color: $flat-red-accent;
                 animation-delay: 1s;
                 &:hover {
                     color: $flat-black;
@@ -208,7 +276,6 @@ body {
             #contact {
                 top: 40rem;
                 animation-delay: 1.5s;
-                // color: $flat-red-accent;
                 &:hover {
                     color: $flat-black;
                 }
@@ -225,70 +292,45 @@ body {
                 text-transform: uppercase;
                 background-color: $flat-yellow-accent;
                 border-radius: 0rem;
+                overflow: hidden;
+                border-radius: 0;
 
                 &:before {
                     position: absolute;
-                    content: 'Click To Download_';
-                    font-size: 2rem;
-                    color: $flat-black;
-                    text-align: right;
+                    content: "Click To Download";
+                    font-size: 3rem;
+                    color: rgba($flat-black, 0);
+                    text-align: center;
                     overflow: hidden;
-                    vertical-align: bottom;
-                    line-height: 1.5;
-                    bottom: 0;
+                    bottom: 0%;
+                    right: -2.5%;
+                    width: 0rem;
+                    height: 90%;
+                    background-color: $flat-black;
+                    transition: 0.25s all ease-in;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    height: 10%;
                     left: 0;
-                    width: 100%;
-                    height: 0%;
-                    background-color: $flat-white;
-                    // border: .2rem solid $flat-yellow-accent;
-                    transition: .25s all;
+                    bottom: 0;
+                    width: 0;
+                    background-color: $flat-yellow-accent;
+
+                    transition: 0.25s all ease-out;
                 }
 
                 &:hover {
-                    // background-color: $flat-white;
-                    // color: $flat-red-accent;
-                    // border-radius: 1rem;
-
-                    &::before {
-                        height: 100%;
-
+                    &::before,
+                    &::after {
+                        color: $flat-yellow;
+                        // padding: 20rem;
+                        width: 100%;
+                        // height: 2.5rem;
                     }
                 }
-            }
-        }
-    }
-
-    .name {
-        text-rendering: geometricPrecision;
-        pointer-events: none;
-        display: block;
-        font-size: calc(8.5rem + (100vw *.01));
-        font-weight: 100;
-        bottom: -.5rem;
-        letter-spacing: .3rem;
-        text-transform: capitalize;
-        position: absolute;
-        z-index: 300;
-        right: -12 rem;
-        // width: 500%;
-        &-container {
-            position: fixed;
-            z-index: 200;
-            top: 2rem;
-            left: 2rem;
-            width: 100%;
-            height: 12.5rem;
-
-
-            &::before {
-                content: "";
-                position: absolute;
-                z-index: 100;
-                width: 19.2rem;
-                height: 100%;
-                top: 0rem;
-                left: 0rem;
-                background-color: $flat-white;
             }
         }
     }
@@ -297,7 +339,7 @@ body {
 .white-text {
     font-family: inherit;
     color: $flat-white;
-    font-weight: 200; 
+    font-weight: 200;
 }
 
 .shake {

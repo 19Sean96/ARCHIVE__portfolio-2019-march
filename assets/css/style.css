@@ -3,7 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   cursor: none;
 }
 
@@ -12,8 +12,13 @@ html {
   scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Raleway', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
 }
 
 body {
@@ -39,7 +44,7 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   border-radius: 3.75px;
   box-shadow: inset 0px 0 6px rgba(239, 240, 242, 0.4);
-  background-color: #1a59d8;
+  background-color: #d82433;
 }
 
 .cursor {
@@ -53,9 +58,82 @@ body::-webkit-scrollbar-thumb {
   transform: translate(-50%, -50%);
 }
 
+.cursor::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: 0.2rem solid #bf0313;
+  transition: 0.5s all 0.25s;
+}
+
+.cursor-2 {
+  pointer-events: none;
+  position: fixed;
+  z-index: 999999999;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: transparent;
+  border: 0.4rem solid #d82433;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.075s all;
+  animation: pulse 500ms infinite alternate;
+}
+
+.cursor-2::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  border: 0.2rem solid #f2441d;
+  transition: 0.5s all 0.25s;
+  animation: pulse2 350ms infinite alternate ease-in-out;
+}
+
+@keyframes pulse {
+  to {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+}
+
+@keyframes pulse2 {
+  to {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+.name {
+  text-rendering: geometricPrecision;
+  color: #eff0f2;
+  font-weight: 100;
+  font-size: 5rem;
+}
+
+.name-container {
+  display: inline-block;
+  position: absolute;
+  top: 5%;
+  left: 70%;
+  transform: translate3d(0rem, 50rem, 0px);
+  transition: 0.125s all ease-out;
+}
+
 .headline {
   background: repeating-linear-gradient(45deg, rgba(239, 240, 242, 0.75), rgba(239, 240, 242, 0.75) 0.1rem, rgba(0, 0, 0, 0) 0.1rem, rgba(0, 0, 0, 0) 30rem);
   height: 400vh;
+  width: 100vw;
 }
 
 .headline .left-background {
@@ -78,6 +156,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .headline .left-background .nav-list-item {
+  display: block;
+  padding-left: 2rem;
   text-rendering: geometricPrecision;
   position: absolute;
   z-index: 400;
@@ -92,12 +172,12 @@ body::-webkit-scrollbar-thumb {
   text-align: left;
   text-transform: capitalize;
   font-weight: 800;
-  transition: .125s all linear;
+  transition: 0.2s top ease-out, 0.2s left ease-out, 0.125s color ease-out;
 }
 
 .headline .left-background .nav-list-item:not(#resume)::before {
   z-index: -1;
-  content: '';
+  content: "";
   font-size: 3rem;
   position: absolute;
   bottom: 1.25rem;
@@ -105,13 +185,13 @@ body::-webkit-scrollbar-thumb {
   width: 0;
   height: 2.25rem;
   background-color: #f2b707;
-  transition: .1s width .1s;
+  transition: 0.1s width 0.1s;
   overflow: hidden;
 }
 
 .headline .left-background .nav-list-item:not(#resume)::after {
   z-index: -1;
-  content: '';
+  content: "";
   font-size: 3rem;
   position: absolute;
   top: 1.25rem;
@@ -119,18 +199,17 @@ body::-webkit-scrollbar-thumb {
   width: 0;
   height: 2.25rem;
   background-color: #f2b707;
-  transition: .1s width .1s;
+  transition: 0.1s width 0.1s;
   overflow: hidden;
 }
 
 .headline .left-background .nav-list-item:not(#resume):hover::before, .headline .left-background .nav-list-item:not(#resume):hover::after {
   width: 100%;
-  transition: .3s width ease-in-out;
+  transition: 0.3s width ease-in-out;
 }
 
 .headline .left-background .nav-list #bio {
   top: 17.5rem;
-  transform: rotate(0);
 }
 
 .headline .left-background .nav-list #bio:hover {
@@ -139,7 +218,7 @@ body::-webkit-scrollbar-thumb {
 
 .headline .left-background .nav-list #skills {
   top: 25rem;
-  animation-delay: .5s;
+  animation-delay: 0.5s;
 }
 
 .headline .left-background .nav-list #skills:hover {
@@ -175,61 +254,39 @@ body::-webkit-scrollbar-thumb {
   text-transform: uppercase;
   background-color: #f2a007;
   border-radius: 0rem;
+  overflow: hidden;
+  border-radius: 0;
 }
 
 .headline .left-background .nav-list #resume:before {
   position: absolute;
-  content: 'Click To Download_';
-  font-size: 2rem;
-  color: #0c0c0c;
-  text-align: right;
+  content: "Click To Download";
+  font-size: 3rem;
+  color: rgba(12, 12, 12, 0);
+  text-align: center;
   overflow: hidden;
-  vertical-align: bottom;
-  line-height: 1.5;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0%;
-  background-color: #eff0f2;
-  transition: .25s all;
+  bottom: 0%;
+  right: -2.5%;
+  width: 0rem;
+  height: 90%;
+  background-color: #0c0c0c;
+  transition: 0.25s all ease-in;
 }
 
-.headline .left-background .nav-list #resume:hover::before {
-  height: 100%;
-}
-
-.headline .name {
-  text-rendering: geometricPrecision;
-  pointer-events: none;
-  display: block;
-  font-size: calc(8.5rem + (100vw *.01));
-  font-weight: 100;
-  bottom: -.5rem;
-  letter-spacing: .3rem;
-  text-transform: capitalize;
+.headline .left-background .nav-list #resume::after {
   position: absolute;
-  z-index: 300;
-  right: -12 rem;
-}
-
-.headline .name-container {
-  position: fixed;
-  z-index: 200;
-  top: 2rem;
-  left: 2rem;
-  width: 100%;
-  height: 12.5rem;
-}
-
-.headline .name-container::before {
   content: "";
-  position: absolute;
-  z-index: 100;
-  width: 19.2rem;
-  height: 100%;
-  top: 0rem;
-  left: 0rem;
-  background-color: #eff0f2;
+  height: 10%;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background-color: #f2a007;
+  transition: 0.25s all ease-out;
+}
+
+.headline .left-background .nav-list #resume:hover::before, .headline .left-background .nav-list #resume:hover::after {
+  color: #f2b707;
+  width: 100%;
 }
 
 .white-text {
