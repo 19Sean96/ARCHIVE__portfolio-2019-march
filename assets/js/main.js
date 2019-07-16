@@ -66,32 +66,30 @@ window.onscroll = function() {
     //     $("#contact").css("top", `${40 - x * 2}rem`);
     // } 
     // else if (topPos < 5.3) {
-    // //     let x = topPos * 1.75 - prevPos;
-    // //     $("#bio").css("left", `${8.2 - x*1.5}rem`);
+    //     let x = topPos * 1.75 - prevPos;
+    //     $("#bio").css("left", `${8.2 - x*1.5}rem`);
 
 
-    // //     $("#skills").css({
-    // //         "left": `${8.2 - x*1.5}rem`,
-    // //         'top': `9rem`
-    // //     });
-    // //     $("#projects").css({
-    // //         "left": `${8.2 - x*1.5}rem`,
-    // //         'top': `15.5rem`
-    // //     });
-    // //     $("#contact").css({
-    // //         "left": `${8.2 - x*1.5}rem`,
-    // //         'top': `22rem`
-    // //     });
+    //     $("#skills").css({
+    //         "left": `${8.2 - x*1.5}rem`,
+    //         'top': `9rem`
+    //     });
+    //     $("#projects").css({
+    //         "left": `${8.2 - x*1.5}rem`,
+    //         'top': `15.5rem`
+    //     });
+    //     $("#contact").css({
+    //         "left": `${8.2 - x*1.5}rem`,
+    //         'top': `22rem`
+    //     });
     // }
     prevPos = topPos;
 };
 
 
-// window.onscroll = function() {
-    // name.css({
-    //     transform: `translate3d(0rem,${50 + topPos * 25}rem, 0rem)`
-    // });
-// }
+
+
+
 
 $(document).mousemove(function(e) {
     let position =
@@ -107,28 +105,23 @@ $(document).mousemove(function(e) {
     });
 });
 
+
+
+
+// THIS CONTROLS THE TITLE SWITCH ON THE LANDING PAGE
 const occupationList = [
     'designer',
     'developer',
     'problem solver',
     'optomist'
 ]
-
 let k = 0;
-
 const switchText = function() {
-
     if (k >= occupationList.length) {
         k = 0;
     } 
-
     $('.occupation').text(occupationList[k]);
-
-
     k++;
-
 }
-
-
 window.setInterval(switchText, 1500);
 

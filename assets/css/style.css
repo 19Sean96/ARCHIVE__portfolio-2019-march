@@ -1,6 +1,7 @@
 /* Color Theme Swatches in Hex */
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Montserrat", serif;
@@ -25,13 +26,13 @@ body {
   overflow-x: hidden;
   position: relative;
   min-height: 200vh;
-  min-width: 100vw;
-  background-color: #130f40;
+  max-width: 100vw;
   background-image: linear-gradient(45deg, #023e8c 0%, #046bf2 57%, #0c0c0c 57%);
 }
 
 body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   background-color: #0c0c0c;
 }
@@ -43,7 +44,8 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   border-radius: 3.75px;
-  box-shadow: inset 0px 0 6px rgba(239, 240, 242, 0.4);
+  -webkit-box-shadow: inset 0px 0 6px rgba(239, 240, 242, 0.4);
+          box-shadow: inset 0px 0 6px rgba(239, 240, 242, 0.4);
   background-color: #d82433;
 }
 
@@ -55,7 +57,8 @@ body::-webkit-scrollbar-thumb {
   height: 1rem;
   background-color: #eff0f2;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .cursor::before {
@@ -64,11 +67,13 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   height: 2rem;
   width: 2rem;
   border-radius: 50%;
   border: 0.2rem solid #bf0313;
+  -webkit-transition: 0.5s all 0.25s;
   transition: 0.5s all 0.25s;
 }
 
@@ -81,9 +86,12 @@ body::-webkit-scrollbar-thumb {
   background-color: transparent;
   border: 0.4rem solid #d82433;
   border-radius: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  -webkit-transition: 0.075s all;
   transition: 0.075s all;
-  animation: pulse 500ms infinite alternate;
+  -webkit-animation: pulse 500ms infinite alternate;
+          animation: pulse 500ms infinite alternate;
 }
 
 .cursor-2::before {
@@ -92,18 +100,34 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
   height: 2.5rem;
   width: 2.5rem;
   border-radius: 50%;
   border: 0.2rem solid #f2441d;
-  transition: 0.5s all 0.25s;
-  animation: pulse2 350ms infinite alternate ease-in-out;
+  -webkit-animation: pulse2 350ms infinite alternate ease-in-out;
+          animation: pulse2 350ms infinite alternate ease-in-out;
+}
+
+@-webkit-keyframes pulse {
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(1.25);
+            transform: translate(-50%, -50%) scale(1.25);
+  }
 }
 
 @keyframes pulse {
   to {
-    transform: translate(-50%, -50%) scale(1.25);
+    -webkit-transform: translate(-50%, -50%) scale(1.25);
+            transform: translate(-50%, -50%) scale(1.25);
+  }
+}
+
+@-webkit-keyframes pulse2 {
+  to {
+    height: 3rem;
+    width: 3rem;
   }
 }
 
@@ -132,8 +156,8 @@ body::-webkit-scrollbar-thumb {
   z-index: 15;
   background: #F2994A;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);
   /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#F2C94C), to(#F2994A));
   background: linear-gradient(to right, #F2C94C, #F2994A);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
@@ -177,6 +201,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .headline {
+  overflow-x: hidden;
   background: repeating-linear-gradient(45deg, rgba(239, 240, 242, 0.75), rgba(239, 240, 242, 0.75) 0.1rem, rgba(0, 0, 0, 0) 0.1rem, rgba(0, 0, 0, 0) 30rem);
   height: 400vh;
   width: 100vw;
@@ -219,7 +244,8 @@ body::-webkit-scrollbar-thumb {
   text-align: left;
   text-transform: capitalize;
   font-weight: 800;
-  transition: 0.2s top ease-out, 0.2s left ease-out, 0.125s color ease-out;
+  -webkit-transition: 0.01s top linear, 0.01s left linear, 0.125s color ease-out;
+  transition: 0.01s top linear, 0.01s left linear, 0.125s color ease-out;
 }
 
 .headline .nav-list-item:not(#resume)::before {
@@ -232,6 +258,7 @@ body::-webkit-scrollbar-thumb {
   width: 0;
   height: 26%;
   background-color: #f2b707;
+  -webkit-transition: 0.1s width 0.1s;
   transition: 0.1s width 0.1s;
   overflow: hidden;
 }
@@ -246,12 +273,14 @@ body::-webkit-scrollbar-thumb {
   width: 0;
   height: 27%;
   background-color: #f2b707;
+  -webkit-transition: 0.1s width 0.1s;
   transition: 0.1s width 0.1s;
   overflow: hidden;
 }
 
 .headline .nav-list-item:not(#resume):hover::before, .headline .nav-list-item:not(#resume):hover::after {
   width: 100%;
+  -webkit-transition: 0.3s width ease-in-out;
   transition: 0.3s width ease-in-out;
 }
 
@@ -265,7 +294,8 @@ body::-webkit-scrollbar-thumb {
 
 .headline .nav-list #skills {
   top: 25rem;
-  animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 
 .headline .nav-list #skills:hover {
@@ -274,7 +304,8 @@ body::-webkit-scrollbar-thumb {
 
 .headline .nav-list #projects {
   top: 32.5rem;
-  animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 .headline .nav-list #projects:hover {
@@ -283,7 +314,8 @@ body::-webkit-scrollbar-thumb {
 
 .headline .nav-list #contact {
   top: 40rem;
-  animation-delay: 1.5s;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
 }
 
 .headline .nav-list #contact:hover {
@@ -295,7 +327,8 @@ body::-webkit-scrollbar-thumb {
   top: 60rem;
   left: 0;
   color: #eff0f2;
-  animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
   text-align: left;
   padding-left: 1rem;
   text-transform: uppercase;
@@ -317,6 +350,7 @@ body::-webkit-scrollbar-thumb {
   width: 0rem;
   height: 90%;
   background-color: #0c0c0c;
+  -webkit-transition: 0.25s all ease-in;
   transition: 0.25s all ease-in;
 }
 
@@ -328,6 +362,7 @@ body::-webkit-scrollbar-thumb {
   bottom: 0;
   width: 0;
   background-color: #f2a007;
+  -webkit-transition: 0.25s all ease-out;
   transition: 0.25s all ease-out;
 }
 
@@ -343,9 +378,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 .shake {
-  animation-delay: 0s !important;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-  animation-duration: 2s;
+  -webkit-animation-delay: 0s !important;
+          animation-delay: 0s !important;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
 }
 /*# sourceMappingURL=style.css.map */
