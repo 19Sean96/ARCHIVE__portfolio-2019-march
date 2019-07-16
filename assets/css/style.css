@@ -3,7 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Roboto Slab", serif;
+  font-family: "Montserrat", serif;
   cursor: none;
 }
 
@@ -18,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
 }
 
 body {
@@ -114,20 +114,66 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+.bio {
+  font-family: "Roboto Mono", serif;
+  font-size: 6rem;
+  color: #eff0f2;
+  font-weight: lighter;
+  text-align: right;
+}
+
+.bio-container {
+  display: inline-block;
+  padding: 1rem;
+  position: fixed;
+  top: 40rem;
+  right: 13%;
+  width: 65rem;
+  z-index: 15;
+  background: #F2994A;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F2C94C, #F2994A);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bio .occupation {
+  font-weight: bolder;
+  color: #03173f;
+  text-transform: uppercase;
+}
+
 .name {
   text-rendering: geometricPrecision;
-  color: #eff0f2;
-  font-weight: 100;
-  font-size: 5rem;
+  color: #f2a007;
+  font-weight: 400;
+  font-size: 8rem;
 }
 
 .name-container {
+  will-change: transform;
   display: inline-block;
-  position: absolute;
-  top: 5%;
+  position: fixed;
+  top: 15%;
   left: 70%;
-  transform: translate3d(0rem, 50rem, 0px);
-  transition: 0.125s all ease-out;
+  z-index: 5;
+}
+
+.name-container::before {
+  content: '';
+  position: absolute;
+  top: 5rem;
+  left: -3rem;
+  background: repeating-linear-gradient(45deg, #0c0c0c, #0c0c0c 0.3rem, #5f5f61 0.3rem, #5f5f61 0.6rem);
+  height: 100%;
+  width: 200%;
+}
+
+.extra-space {
+  width: 100vw;
+  height: 400vh;
+  background-color: lightblue;
 }
 
 .headline {
@@ -148,14 +194,15 @@ body::-webkit-scrollbar-thumb {
   background-size: cover;
 }
 
-.headline .left-background .nav-list {
+.headline .nav-list {
   position: fixed;
   z-index: 1000;
   width: 40rem;
   height: 100%;
 }
 
-.headline .left-background .nav-list-item {
+.headline .nav-list-item {
+  will-change: top, left;
   display: block;
   padding-left: 2rem;
   text-rendering: geometricPrecision;
@@ -166,7 +213,7 @@ body::-webkit-scrollbar-thumb {
   line-height: 1.75;
   color: #f2a007;
   text-decoration: none;
-  font-size: 4rem;
+  font-size: 3rem;
   background-color: #0c0c0c;
   width: 100%;
   text-align: left;
@@ -175,7 +222,7 @@ body::-webkit-scrollbar-thumb {
   transition: 0.2s top ease-out, 0.2s left ease-out, 0.125s color ease-out;
 }
 
-.headline .left-background .nav-list-item:not(#resume)::before {
+.headline .nav-list-item:not(#resume)::before {
   z-index: -1;
   content: "";
   font-size: 3rem;
@@ -183,13 +230,13 @@ body::-webkit-scrollbar-thumb {
   bottom: 1.25rem;
   left: -1rem;
   width: 0;
-  height: 2.25rem;
+  height: 26%;
   background-color: #f2b707;
   transition: 0.1s width 0.1s;
   overflow: hidden;
 }
 
-.headline .left-background .nav-list-item:not(#resume)::after {
+.headline .nav-list-item:not(#resume)::after {
   z-index: -1;
   content: "";
   font-size: 3rem;
@@ -197,53 +244,53 @@ body::-webkit-scrollbar-thumb {
   top: 1.25rem;
   right: 1rem;
   width: 0;
-  height: 2.25rem;
+  height: 27%;
   background-color: #f2b707;
   transition: 0.1s width 0.1s;
   overflow: hidden;
 }
 
-.headline .left-background .nav-list-item:not(#resume):hover::before, .headline .left-background .nav-list-item:not(#resume):hover::after {
+.headline .nav-list-item:not(#resume):hover::before, .headline .nav-list-item:not(#resume):hover::after {
   width: 100%;
   transition: 0.3s width ease-in-out;
 }
 
-.headline .left-background .nav-list #bio {
+.headline .nav-list #bio {
   top: 17.5rem;
 }
 
-.headline .left-background .nav-list #bio:hover {
+.headline .nav-list #bio:hover {
   color: #0c0c0c;
 }
 
-.headline .left-background .nav-list #skills {
+.headline .nav-list #skills {
   top: 25rem;
   animation-delay: 0.5s;
 }
 
-.headline .left-background .nav-list #skills:hover {
+.headline .nav-list #skills:hover {
   color: #0c0c0c;
 }
 
-.headline .left-background .nav-list #projects {
+.headline .nav-list #projects {
   top: 32.5rem;
   animation-delay: 1s;
 }
 
-.headline .left-background .nav-list #projects:hover {
+.headline .nav-list #projects:hover {
   color: #0c0c0c;
 }
 
-.headline .left-background .nav-list #contact {
+.headline .nav-list #contact {
   top: 40rem;
   animation-delay: 1.5s;
 }
 
-.headline .left-background .nav-list #contact:hover {
+.headline .nav-list #contact:hover {
   color: #0c0c0c;
 }
 
-.headline .left-background .nav-list #resume {
+.headline .nav-list #resume {
   z-index: 50000;
   top: 60rem;
   left: 0;
@@ -258,10 +305,10 @@ body::-webkit-scrollbar-thumb {
   border-radius: 0;
 }
 
-.headline .left-background .nav-list #resume:before {
+.headline .nav-list #resume:before {
   position: absolute;
   content: "Click To Download";
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: rgba(12, 12, 12, 0);
   text-align: center;
   overflow: hidden;
@@ -273,7 +320,7 @@ body::-webkit-scrollbar-thumb {
   transition: 0.25s all ease-in;
 }
 
-.headline .left-background .nav-list #resume::after {
+.headline .nav-list #resume::after {
   position: absolute;
   content: "";
   height: 10%;
@@ -284,7 +331,7 @@ body::-webkit-scrollbar-thumb {
   transition: 0.25s all ease-out;
 }
 
-.headline .left-background .nav-list #resume:hover::before, .headline .left-background .nav-list #resume:hover::after {
+.headline .nav-list #resume:hover::before, .headline .nav-list #resume:hover::after {
   color: #f2b707;
   width: 100%;
 }
