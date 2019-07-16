@@ -22,67 +22,37 @@ window.scrollBy({
 let topPos;
 const nameContainer = $(".name-container");
 const bioContainer = $(".bio-container");
+const bioPage = $("#bio-page");
+const bioTitle = $(".bio-title");
 
 
 let prevPos;
-
+let bioPosition = 0;
 window.onscroll = function() {
     let position =
         document.documentElement.scrollTop || document.body.scrollTop;
     topPos = position / 500;
-    console.log(topPos);
+    console.log(position);
 
     nameContainer.css({
-        transform: `translate3d(${topPos * 7}rem,0rem, 0rem)`
+        transform: `translate3d(${position / 15}rem,${position / 200}rem, 0rem)`
     });
     bioContainer.css({
+        transform: `translate3d(${position /-50}rem,${position / -20}rem, 0rem)`
+    });
+    bioPage.css({
         transform: `translate3d(0rem,${topPos * -10}rem, 0rem)`
     });
 
+
+    if (position >= 700) {
+        bioPosition = position - 700;
+        bioTitle.css({
+            transform: `translate3d(${bioPosition / 5}rem,${bioPosition / -70}rem, 0rem)`
+        });
+    }
+
     
-
-    // if (topPos <= 2) {
-    //     $("#bio").css({
-    //         left: `${70 - position / 20}%`,
-    //         top: `${17.5 + topPos * 2}rem`
-    //     });
-    //     $("#skills").css({
-    //         left: `${70 - position / 20}%`,
-    //         top: `${25 + topPos * 1.35}rem`
-    //     });
-    //     $("#projects").css({
-    //         left: `${70 - position / 20}%`,
-    //         top: `${32.5 + topPos * 0.75}rem`
-    //     });
-    //     $("#contact").css({
-    //         left: `${70 - position / 20}%`,
-    //         top: `${40}rem`
-    //     });
-    // } else if (topPos < 5) {
-    //     let x = topPos * 1.75 - prevPos;
-    //     $("#bio").css("top", `${21.5 - x * 5}rem`);
-    //     $("#skills").css("top", `${27.7 - x * 4}rem`);
-    //     $("#projects").css("top", `${34 - x * 3}rem`);
-    //     $("#contact").css("top", `${40 - x * 2}rem`);
-    // } 
-    // else if (topPos < 5.3) {
-    //     let x = topPos * 1.75 - prevPos;
-    //     $("#bio").css("left", `${8.2 - x*1.5}rem`);
-
-
-    //     $("#skills").css({
-    //         "left": `${8.2 - x*1.5}rem`,
-    //         'top': `9rem`
-    //     });
-    //     $("#projects").css({
-    //         "left": `${8.2 - x*1.5}rem`,
-    //         'top': `15.5rem`
-    //     });
-    //     $("#contact").css({
-    //         "left": `${8.2 - x*1.5}rem`,
-    //         'top': `22rem`
-    //     });
-    // }
     prevPos = topPos;
 };
 
@@ -104,6 +74,30 @@ $(document).mousemove(function(e) {
         left: `${e.pageX}px`
     });
 });
+
+
+$('a').hover(function () {
+        // over
+        $('.cursor').css({
+            'transform': 'translate(-50%, -50%) scale(1.75)',
+            'border-color': '#fff'
+        });
+        $('.cursor-2').css({
+            'transform': 'translate(-50%, -50%) scale(1.75)',
+            'border-color': '#046bf2'
+        });
+
+    }, function () {
+        // out
+        $('.cursor').css({
+            'transform': 'translate(-50%, -50%) scale(1)',
+            'border-color': '#bf0313'
+        });        
+        $('.cursor-2').css({
+            'transform': 'translate(-50%, -50%) scale(1)',
+            'border-color': '#d82433'
+        });    }
+);
 
 
 
