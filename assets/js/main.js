@@ -24,6 +24,8 @@ const nameContainer = $(".name-container");
 const bioContainer = $(".bio-container");
 const bioPage = $("#bio-page");
 const bioTitle = $(".bio-title");
+const bioContent = $(".bio-content");
+
 const inter1 = $(".intersect-1");
 
 
@@ -42,19 +44,23 @@ window.onscroll = function() {
     bioContainer.css({
         transform: `translate3d(${position /-50}rem,${position / -20}rem, 0rem)`
     });
-    bioPage.css({
-        transform: `translate3d(0rem,${topPos * -10}rem, 0rem)`
-    });
+    // bioPage.css({
+    //     transform: `translate3d(0rem,${topPos * -10}rem, 0rem)`
+    // });
     inter1.css({
-        transform: `translate3d(0rem,${topPos * -95}rem, 0rem)`
+        transform: `translate3d(0rem,${topPos * 15}rem, 0rem)`
     });
 
 
-    if (position >= 700) {
-        bioPosition = position - 700;
+    if (position >= 700 && position < 1374) {
+        bioPosition = position - 700; 
         bioTitle.css({
             transform: `translate3d(${bioPosition / 5}rem,${bioPosition / -70}rem, 0rem)`
-        });
+        }).removeClass('fadeOut').addClass('fadeIn');
+    } else if (position >= 1400) {
+        bioPosition = position - 1400;
+        bioTitle.addClass('animated fadeOut');
+        bioContent.css('transform', `translate3d(0rem, ${bioPosition / 50}rem,0rem) translate(-50%, -50%)`);
     }
 
     
@@ -112,7 +118,7 @@ const occupationList = [
     'designer',
     'developer',
     'problem solver',
-    'optomist'
+    'optimist'
 ]
 let k = 0;
 const switchText = function() {

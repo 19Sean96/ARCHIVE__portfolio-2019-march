@@ -1,4 +1,6 @@
 /* Color Theme Swatches in Hex */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in Hex */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -327,8 +329,8 @@ body::-webkit-scrollbar-thumb {
 
 .headline .nav-list #resume:before {
   position: absolute;
-  content: "Click To Download";
-  font-size: 2.5rem;
+  content: "Download";
+  font-size: 2.75rem;
   color: rgba(12, 12, 12, 0);
   text-align: center;
   overflow: hidden;
@@ -359,26 +361,85 @@ body::-webkit-scrollbar-thumb {
 }
 
 #bio-page {
+  position: relative;
   width: 100vw;
   height: 400vh;
   background-color: #dee5f3;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+  border-top: 0.1rem solid #eff0f2;
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left bottom, left top, from(#E9E4F0), to(#cccee3));
-  background: linear-gradient(to top, #E9E4F0, #cccee3);
+  background: -webkit-gradient(linear, left bottom, left top, from(#0D0000), to(#404040));
+  background: linear-gradient(to top, #0D0000, #404040);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#bio-page .bio-content {
+  position: absolute;
+  left: 60%;
+  top: 41.5%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: #F22233;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(45deg, #F22233, #f2441d);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'Roboto Slab', serif;
+  border-radius: .25rem;
+  padding: 4rem 8rem;
+}
+
+#bio-page .bio-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  -webkit-filter: blur(1rem);
+          filter: blur(1rem);
+  z-index: -1;
+}
+
+#bio-page .bio-content .bio-heading {
+  color: #D9D9D9;
+  font-family: inherit;
+  font-weight: 100;
+  font-size: 8rem;
+}
+
+#bio-page .bio-content .bio-par {
+  color: #0D0000;
+  line-height: 1.6;
+  font-size: 4rem;
+  font-weight: bolder;
+}
+
+#bio-page .bio-profile {
+  font-size: 3rem;
+  background-color: white;
+  position: absolute;
+  top: 62.5%;
+  left: 80%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 40%;
+  padding: 5rem;
 }
 
 .bio-title {
   font-family: 'Montserrat', sans-serif;
   display: inline-block;
+  width: 50%;
+  text-align: right;
   position: fixed;
   font-size: 8rem;
-  top: 40%;
-  left: -60%;
+  top: 30%;
+  left: -50%;
   padding: 2rem 4rem;
-  color: #046bf2;
+  color: #dee5f3;
 }
 
 .bio-title::before {
@@ -388,12 +449,19 @@ body::-webkit-scrollbar-thumb {
   left: -2rem;
   z-index: -1;
   width: 75%;
-  height: 180%;
+  height: 98%;
   background-color: transparent;
-  border-left: 0.5rem solid #720202;
-  border-bottom: 0.5rem solid #720202;
-  -webkit-box-shadow: -1rem 1rem 1.5rem rgba(12, 12, 12, 0.25);
-          box-shadow: -1rem 1rem 1.5rem rgba(12, 12, 12, 0.25);
+  border-left: 0.4rem solid #0355bf;
+  border-bottom: 0.4rem solid #0355bf;
+  -webkit-box-shadow: -1.5rem 1.5rem 1.75rem rgba(12, 12, 12, 0.2);
+          box-shadow: -1.5rem 1.5rem 1.75rem rgba(12, 12, 12, 0.2);
+}
+
+.bio-title .bio-subtitle {
+  font-size: 1.75rem;
+  color: #8C8A87;
+  margin-top: 8rem;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .white-text {
@@ -415,12 +483,12 @@ body::-webkit-scrollbar-thumb {
 
 .intersect-1 {
   position: fixed;
-  bottom: -200vh;
+  top: -202vh;
   left: 0;
   background-color: #d82433;
-  height: 100vh;
+  height: 208vh;
   width: 33vw;
-  background: radial-gradient(black 3px, transparent 4px), linear-gradient(rgba(255, 255, 255, 0) 4px, transparent 0), linear-gradient(45deg, transparent 50px, transparent 51px, #0c0c0c 51px, #0c0c0c 52px, transparent 53px, transparent 75px), linear-gradient(-45deg, transparent 51px, transparent 52px, #0c0c0c 52px, #0c0c0c 53px, transparent 54px, transparent 75px), rgba(255, 255, 255, 0);
+  background: radial-gradient(black 1.2rem, transparent 1.5rem), linear-gradient(rgba(255, 255, 255, 0) 4px, transparent 0), linear-gradient(90deg, transparent 50px, transparent 51px, #0c0c0c 51px, #0c0c0c 52px, transparent 53px, transparent 75px), linear-gradient(-90deg, transparent 51px, transparent 52px, #0c0c0c 52px, #0c0c0c 53px, transparent 54px, transparent 75px), rgba(255, 255, 255, 0);
   background-size: 5rem 5rem,100% 6px, 5rem 5rem, 5rem 5rem;
   background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
 }
