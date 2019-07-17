@@ -24,6 +24,8 @@ const nameContainer = $(".name-container");
 const bioContainer = $(".bio-container");
 const bioPage = $("#bio-page");
 const bioTitle = $(".bio-title");
+const inter1 = $(".intersect-1");
+
 
 
 let prevPos;
@@ -42,6 +44,9 @@ window.onscroll = function() {
     });
     bioPage.css({
         transform: `translate3d(0rem,${topPos * -10}rem, 0rem)`
+    });
+    inter1.css({
+        transform: `translate3d(0rem,${topPos * -95}rem, 0rem)`
     });
 
 

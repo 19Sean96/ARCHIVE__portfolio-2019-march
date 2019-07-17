@@ -68,7 +68,7 @@ body {
       $flat-black 57%
     );
 
-    max-height: 200vh;
+    max-height: 190vh;
   }
 
   &::-webkit-scrollbar-track {
@@ -387,13 +387,30 @@ body {
 
   
 .bio-title {
+    font-family: 'Montserrat', sans-serif;
     display: inline-block;
     position: fixed;
     font-size: 8rem;
     top: 40%;
-    left: -75%;
-    // width: 100%; 
-    background-color: red;
+    left: -60%;
+    padding: 2rem 4rem;
+    color: $silk-blue-3;
+    // background-color: rgba($flat-blue, .5);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -2rem;
+        left: -2rem;
+        z-index: -1;
+        width: 75%;
+        height: 180%;
+        background-color: transparent;
+        border-left: .5rem solid $flat-red-dark;
+        border-bottom: .5rem solid $flat-red-dark;
+        box-shadow: -1rem 1rem 1.5rem rgba($flat-black, .25);
+
+    }
 }
 
 .white-text {
@@ -407,4 +424,21 @@ body {
   animation-fill-mode: both;
   animation-iteration-count: infinite;
   animation-duration: 2s;
+}
+
+.intersect-1 {
+    position: fixed;
+    bottom: -200vh;
+    left: 0;
+    background-color: #d82433;
+    height: 100vh;
+    width: 33vw;
+    background: 
+        radial-gradient(black 3px, transparent 4px),
+        linear-gradient(rgba(255, 255, 255, 0) 4px, transparent 0),
+        linear-gradient(45deg, transparent 50px, transparent 51px, $flat-black 51px, $flat-black 52px, transparent 53px, transparent 75px),
+        linear-gradient(-45deg, transparent 51px, transparent 52px, $flat-black 52px, $flat-black 53px, transparent 54px, transparent 75px),
+        rgba(255, 255, 255, 0);
+    background-size: 5rem 5rem,100% 6px, 5rem 5rem, 5rem 5rem;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
 }
