@@ -49,7 +49,7 @@ body {
 
 body .landing {
   background-color: #130f40;
-  background-image: linear-gradient(45deg, #023e8c 0%, #046bf2 57%, #0c0c0c 57%);
+  background-image: linear-gradient(45deg, #023e8c 0%, #046bf2 40%, #0c0c0c 40%);
   max-height: 190vh;
 }
 
@@ -165,11 +165,8 @@ body::-webkit-scrollbar-thumb {
   width: 65rem;
   z-index: 15;
   background: #f2994a;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-gradient(linear, left top, right top, from(#f2c94c), to(#f2994a));
   background: linear-gradient(to right, #f2c94c, #f2994a);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bio .occupation {
@@ -367,66 +364,103 @@ body::-webkit-scrollbar-thumb {
   background-color: #dee5f3;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-  border-top: 0.1rem solid #eff0f2;
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left bottom, left top, from(#0D0000), to(#404040));
-  background: linear-gradient(to top, #0D0000, #404040);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-top: 0.1rem solid #1a59d8;
+  background: repeating-linear-gradient(-60deg, rgba(26, 89, 216, 0.75), rgba(26, 89, 216, 0.75) 0.5rem, rgba(0, 0, 0, 0) 0.1rem, rgba(0, 0, 0, 0) 40rem), -webkit-gradient(linear, left bottom, left top, from(#0D0000), to(#404040));
+  background: repeating-linear-gradient(-60deg, rgba(26, 89, 216, 0.75), rgba(26, 89, 216, 0.75) 0.5rem, rgba(0, 0, 0, 0) 0.1rem, rgba(0, 0, 0, 0) 40rem), linear-gradient(to top, #0D0000, #404040);
 }
 
-#bio-page .bio-content {
+#bio-page .bio-box {
+  -webkit-box-shadow: -1rem -2rem 4rem rgba(12, 12, 12, 0.2);
+          box-shadow: -1rem -2rem 4rem rgba(12, 12, 12, 0.2);
   position: absolute;
+  border-radius: .25rem;
+  font-family: 'Roboto Slab', serif;
+  padding: 4rem 8rem;
+}
+
+#bio-page .bio-creative {
   left: 60%;
-  top: 41.5%;
+  top: 37.5%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 70%;
   background-color: #F22233;
-  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(45deg, #F22233, #f2441d);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  font-family: 'Roboto Slab', serif;
-  border-radius: .25rem;
-  padding: 4rem 8rem;
 }
 
-#bio-page .bio-content::before {
+#bio-page .bio-creative::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: -5rem;
+  left: 2%;
+  width: 4%;
   height: 100%;
-  background: inherit;
-  -webkit-filter: blur(1rem);
-          filter: blur(1rem);
-  z-index: -1;
+  background: #000428;
+  background: -webkit-gradient(linear, left bottom, left top, from(#03173f), to(#03173f));
+  background: linear-gradient(to top, #03173f, #03173f);
 }
 
-#bio-page .bio-content .bio-heading {
-  color: #D9D9D9;
+#bio-page .bio-creative .bio-heading {
+  color: #f2b707;
   font-family: inherit;
   font-weight: 100;
   font-size: 8rem;
+  border-right: solid 1rem #03173f;
+  text-align: right;
+  padding-right: 1.5rem;
+  padding-bottom: 2rem;
 }
 
-#bio-page .bio-content .bio-par {
-  color: #0D0000;
-  line-height: 1.6;
-  font-size: 4rem;
+#bio-page .bio-creative .bio-par {
+  color: #D9D9D9;
+  padding-left: 2.3rem;
+  width: 90%;
+  text-align: left;
+  line-height: 1.75;
+  font-size: 3.5rem;
   font-weight: bolder;
 }
 
-#bio-page .bio-profile {
+#bio-page .bio-tech {
   font-size: 3rem;
-  background-color: white;
-  position: absolute;
+  background-color: #D9D9D9;
   top: 62.5%;
-  left: 80%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 40%;
-  padding: 5rem;
+  right: 1%;
+  width: 60%;
+}
+
+#bio-page .bio-tech::before {
+  content: '';
+  position: absolute;
+  top: -5rem;
+  right: 2%;
+  width: 2%;
+  height: 100%;
+  background: #000428;
+  background: -webkit-gradient(linear, left bottom, left top, from(#0355bf), to(#0355bf));
+  background: linear-gradient(to top, #0355bf, #0355bf);
+}
+
+#bio-page .bio-tech .bio-heading {
+  color: #03173f;
+  color: #8C8A87;
+  font-family: inherit;
+  font-weight: 100;
+  font-size: 8rem;
+  border-left: solid 1rem #03173f;
+  text-align: left;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#bio-page .bio-tech .bio-par {
+  color: #404040;
+  padding-left: 15%;
+  width: 90%;
+  text-align: left;
+  line-height: 1.75;
+  font-size: 3rem;
+  font-weight: bolder;
 }
 
 .bio-title {
@@ -491,5 +525,11 @@ body::-webkit-scrollbar-thumb {
   background: radial-gradient(black 1.2rem, transparent 1.5rem), linear-gradient(rgba(255, 255, 255, 0) 4px, transparent 0), linear-gradient(90deg, transparent 50px, transparent 51px, #0c0c0c 51px, #0c0c0c 52px, transparent 53px, transparent 75px), linear-gradient(-90deg, transparent 51px, transparent 52px, #0c0c0c 52px, #0c0c0c 53px, transparent 54px, transparent 75px), rgba(255, 255, 255, 0);
   background-size: 5rem 5rem,100% 6px, 5rem 5rem, 5rem 5rem;
   background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+
+.quote {
+  font-size: 8.25rem;
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1;
 }
 /*# sourceMappingURL=style.css.map */

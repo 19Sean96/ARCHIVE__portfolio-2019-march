@@ -24,8 +24,8 @@ const nameContainer = $(".name-container");
 const bioContainer = $(".bio-container");
 const bioPage = $("#bio-page");
 const bioTitle = $(".bio-title");
-const bioContent = $(".bio-content");
-
+const bioCreative = $(".bio-creative");
+const bioTech = $(".bio-tech");
 const inter1 = $(".intersect-1");
 
 
@@ -60,7 +60,8 @@ window.onscroll = function() {
     } else if (position >= 1400) {
         bioPosition = position - 1400;
         bioTitle.addClass('animated fadeOut');
-        bioContent.css('transform', `translate3d(0rem, ${bioPosition / 50}rem,0rem) translate(-50%, -50%)`);
+        bioCreative.css('transform', `translate3d(0rem, ${bioPosition / 50}rem,0rem) translate(-50%, -50%)`);
+        bioTech.css('transform', `translate3d(0rem, ${bioPosition / -100}rem,0rem)`);
     }
 
     
