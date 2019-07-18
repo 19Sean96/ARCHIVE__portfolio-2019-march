@@ -240,7 +240,7 @@ body {
     position: fixed;
     left: 2rem;
     top: 2rem;
-    z-index: 5;
+    z-index: 300;
     height: 200vh;
     width: 19.2rem;
     background-color: $flat-white;
@@ -382,8 +382,9 @@ body {
 
 #bio-page {
     position: relative;
+    z-index: 200;
     width: 100vw;
-    height: 400vh;
+    height: 450vh;
     background-color: $silk-white;
     transform: translate3d(0,0,0);
     border-top: .1rem solid $flat-blue;
@@ -407,8 +408,8 @@ body {
     }
 
     .bio-creative {
-        left: 60%;
-        top: 37.5%;
+        left: 55%;
+        top: 32.5%;
         transform: translate(-50%, -50%);
         width: 70%;
         background-color: $flat-red-2;
@@ -450,9 +451,10 @@ body {
     .bio-tech {
         font-size: 3rem;
         background-color: $matte-white;
-        top: 62.5%;
+        top: 52.5%;
         right: 1%;
         width: 60%;
+        z-index: 150;
 
         &::before {
             content: '';
@@ -472,7 +474,7 @@ body {
             font-family: inherit;
             font-weight: 100;
             font-size: 8rem;
-            border-left: solid 1rem $silk-blue-2;
+            border-left: solid 1rem $silk-blue-4;
             text-align: left;
             padding-left: 1.5rem;
             margin-bottom: 2rem;
@@ -480,6 +482,59 @@ body {
 
         .bio-par {
             color: $matte-gray-dark;
+            padding-left: 15%;
+            width: 90%;
+            text-align: left;
+            line-height: 1.75;
+            font-size: 3rem;
+            font-weight: bolder;
+        }
+    }
+    .bio-personal {
+        // position: relative;
+        font-size: 3rem;
+        background: radial-gradient($flat-yellow, $flat-yellow-accent);
+        top: 57.5%;
+        left: 20%;
+        width: 70%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -17.5rem;
+            right: 4%;
+            width: 2%;
+            height: 100%;
+            background: #000428; 
+            background: linear-gradient(to top, $flat-red, $flat-red-2); 
+            transform: rotate(-45deg);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 15rem;
+            left: 15%;
+            width: 1.5%;
+            height: 75%;
+            background: $flat-red-2; 
+            background: linear-gradient(to bottom, $flat-red, $flat-red-2); 
+            // transform: translateX(-50%);
+        }
+        
+        .bio-heading {
+
+            color: $flat-orange;
+            font-family: inherit;
+            font-weight: 100;
+            font-size: 8rem;
+            text-align: left;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .bio-par {
+            color: $matte-black;
             padding-left: 15%;
             width: 90%;
             text-align: left;
@@ -497,11 +552,14 @@ body {
     width: 50%;
     text-align: right;
     position: fixed;
+    z-index: 205;
     font-size: 8rem;
     top: 30%;
     left: -50%;
+    left: 40%;
     padding: 2rem 4rem;
     color: $silk-white;
+    opacity: 0;
 
     &::before {
         content: '';
@@ -523,6 +581,14 @@ body {
         margin-top: 8rem;
         font-family: 'Roboto Mono', monospace;
     }
+}
+
+#skills-page {
+    position: relative;
+    // margin-left: 30rem;
+    width: 100vw;
+    height: 400vh;
+    background-color: $flat-red-accent;
 }
 
 .white-text {

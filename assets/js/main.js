@@ -26,10 +26,11 @@ const bioPage = $("#bio-page");
 const bioTitle = $(".bio-title");
 const bioCreative = $(".bio-creative");
 const bioTech = $(".bio-tech");
+const bioPersonal = $(".bio-personal");
 const inter1 = $(".intersect-1");
 
 
-
+let enteredBio = false;
 let prevPos;
 let bioPosition = 0;
 window.onscroll = function() {
@@ -51,17 +52,32 @@ window.onscroll = function() {
         transform: `translate3d(0rem,${topPos * 15}rem, 0rem)`
     });
 
+    if (position < 700 && enteredBio) {
 
-    if (position >= 700 && position < 1374) {
+        bioTitle.removeClass('zoomIn').addClass('zoomOut');
+
+    } else if (position >= 700 && position < 1374) {
+        enteredBio = true;
         bioPosition = position - 700; 
-        bioTitle.css({
-            transform: `translate3d(${bioPosition / 5}rem,${bioPosition / -70}rem, 0rem)`
-        }).removeClass('fadeOut').addClass('fadeIn');
-    } else if (position >= 1400) {
+        // bioTitle.css({
+        //     transform: `translate3d(${bioPosition / 5}rem,${bioPosition / -70}rem, 0rem)`
+        // }).removeClass('zoomOut').addClass('fadeIn');
+        if (position > 800) {
+            bioTitle.removeClass('zoomOut').addClass('zoomIn').css('opacity','1');
+        }
+    } 
+    else if (position >= 1400) {
         bioPosition = position - 1400;
-        bioTitle.addClass('animated fadeOut');
         bioCreative.css('transform', `translate3d(0rem, ${bioPosition / 50}rem,0rem) translate(-50%, -50%)`);
         bioTech.css('transform', `translate3d(0rem, ${bioPosition / -100}rem,0rem)`);
+
+        if (position > 1550) {
+            bioTitle.removeClass('zoomIn').addClass('zoomOut');
+        }
+
+        if (position >= 2000) {
+            bioPersonal.css('transform', `translate3d(0rem, ${bioPosition / 50}rem,0rem)`);
+        }
     }
 
     

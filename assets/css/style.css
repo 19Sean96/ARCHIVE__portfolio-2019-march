@@ -215,7 +215,7 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   left: 2rem;
   top: 2rem;
-  z-index: 5;
+  z-index: 300;
   height: 200vh;
   width: 19.2rem;
   background-color: #eff0f2;
@@ -359,8 +359,9 @@ body::-webkit-scrollbar-thumb {
 
 #bio-page {
   position: relative;
+  z-index: 200;
   width: 100vw;
-  height: 400vh;
+  height: 450vh;
   background-color: #dee5f3;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
@@ -379,8 +380,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 #bio-page .bio-creative {
-  left: 60%;
-  top: 37.5%;
+  left: 55%;
+  top: 32.5%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 70%;
@@ -424,9 +425,10 @@ body::-webkit-scrollbar-thumb {
 #bio-page .bio-tech {
   font-size: 3rem;
   background-color: #D9D9D9;
-  top: 62.5%;
+  top: 52.5%;
   right: 1%;
   width: 60%;
+  z-index: 150;
 }
 
 #bio-page .bio-tech::before {
@@ -447,7 +449,7 @@ body::-webkit-scrollbar-thumb {
   font-family: inherit;
   font-weight: 100;
   font-size: 8rem;
-  border-left: solid 1rem #03173f;
+  border-left: solid 1rem #0355bf;
   text-align: left;
   padding-left: 1.5rem;
   margin-bottom: 2rem;
@@ -463,17 +465,74 @@ body::-webkit-scrollbar-thumb {
   font-weight: bolder;
 }
 
+#bio-page .bio-personal {
+  font-size: 3rem;
+  background: radial-gradient(#f2b707, #f2a007);
+  top: 57.5%;
+  left: 20%;
+  width: 70%;
+}
+
+#bio-page .bio-personal::before {
+  content: '';
+  position: absolute;
+  top: -17.5rem;
+  right: 4%;
+  width: 2%;
+  height: 100%;
+  background: #000428;
+  background: -webkit-gradient(linear, left bottom, left top, from(#bf0313), to(#F22233));
+  background: linear-gradient(to top, #bf0313, #F22233);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+#bio-page .bio-personal::after {
+  content: '';
+  position: absolute;
+  top: 15rem;
+  left: 15%;
+  width: 1.5%;
+  height: 75%;
+  background: #F22233;
+  background: -webkit-gradient(linear, left top, left bottom, from(#bf0313), to(#F22233));
+  background: linear-gradient(to bottom, #bf0313, #F22233);
+}
+
+#bio-page .bio-personal .bio-heading {
+  color: #f2441d;
+  font-family: inherit;
+  font-weight: 100;
+  font-size: 8rem;
+  text-align: left;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#bio-page .bio-personal .bio-par {
+  color: #0D0000;
+  padding-left: 15%;
+  width: 90%;
+  text-align: left;
+  line-height: 1.75;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
 .bio-title {
   font-family: 'Montserrat', sans-serif;
   display: inline-block;
   width: 50%;
   text-align: right;
   position: fixed;
+  z-index: 205;
   font-size: 8rem;
   top: 30%;
   left: -50%;
+  left: 40%;
   padding: 2rem 4rem;
   color: #dee5f3;
+  opacity: 0;
 }
 
 .bio-title::before {
@@ -496,6 +555,13 @@ body::-webkit-scrollbar-thumb {
   color: #8C8A87;
   margin-top: 8rem;
   font-family: 'Roboto Mono', monospace;
+}
+
+#skills-page {
+  position: relative;
+  width: 100vw;
+  height: 400vh;
+  background-color: #d82433;
 }
 
 .white-text {
