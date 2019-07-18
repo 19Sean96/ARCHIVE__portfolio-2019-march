@@ -17,7 +17,7 @@ $flat-gray-mid: #5f5f61;
 
 $silk-white: #dee5f3;
 $silk-blue-1: #0453f2;
-$silk-blue-2: #03173f;
+$silk-blue-2: #052055;
 $silk-blue-3: #046bf2;
 $silk-blue-4: #0355bf;
 $silk-blue-5: rgb(2, 62, 140);
@@ -37,6 +37,9 @@ $matte-gray-light: #8C8A87;
 $matte-gray-mid: #595959;
 $matte-gray-dark: #404040;
 
+$sassy-pink: #C76495;
+$git-peach: #E94F32;
+$node-green: #87C000;
 
 * {
   box-sizing: border-box;
@@ -228,8 +231,8 @@ body {
   overflow-x: hidden;
   background: repeating-linear-gradient(
     45deg,
-    rgba($flat-white, 0.75),
-    rgba($flat-white, 0.75) 0.5rem,
+    rgba($matte-gray-dark, 0.75),
+    rgba($matte-black, 0.75) 0.5rem,
     rgba(0, 0, 0, 0) 0.1rem,
     rgba(0, 0, 0, 0) 30rem
   );
@@ -240,7 +243,7 @@ body {
     position: fixed;
     left: 2rem;
     top: 2rem;
-    z-index: 300;
+    z-index: 305;
     height: 200vh;
     width: 19.2rem;
     background-color: $flat-white;
@@ -256,7 +259,7 @@ body {
 
   .nav-list {
     position: fixed;
-    z-index: 1000;
+    z-index: 400;
     width: 40rem;
     height: 100%;
     padding-top: 4rem;
@@ -350,7 +353,7 @@ body {
         text-align: center;
         overflow: hidden;
         bottom: 0%;
-        right: -2.5%;
+        right: 0%;
         width: 0rem;
         height: 90%;
         background-color: $flat-black;
@@ -382,7 +385,7 @@ body {
 
 #bio-page {
     position: relative;
-    z-index: 200;
+    z-index: 300;
     width: 100vw;
     height: 450vh;
     background-color: $silk-white;
@@ -391,12 +394,14 @@ body {
     background: 
         repeating-linear-gradient(
         -60deg,
-        rgba($flat-blue, 0.75),
-        rgba($flat-blue, 0.75) 0.5rem,
+        rgba($flat-black, 0.75),
+        rgba($flat-black, 0.75) 0.5rem,
         rgba(0, 0, 0, 0) 0.1rem,
         rgba(0, 0, 0, 0) 40rem
       ),
         linear-gradient(to top, $matte-black, rgba($matte-gray-dark,1));
+    // border-bottom: 2rem $matte-black solid;
+    box-shadow: 0rem 1rem 1.75rem rgba($flat-black, .3);
 
     .bio-box {
         box-shadow: -1rem -2rem 4rem rgba($flat-black, .2);
@@ -552,7 +557,7 @@ body {
     width: 50%;
     text-align: right;
     position: fixed;
-    z-index: 205;
+    z-index: 305;
     font-size: 8rem;
     top: 30%;
     left: -50%;
@@ -580,15 +585,286 @@ body {
         color: $matte-gray-light;
         margin-top: 8rem;
         font-family: 'Roboto Mono', monospace;
+        animation-iteration-count: infinite;
+        animation-duration: 3s;
+        animation-delay: 1s;
     }
 }
 
 #skills-page {
     position: relative;
+    z-index: 290;
     // margin-left: 30rem;
     width: 100vw;
-    height: 400vh;
+    height: 240vh;
     background-color: $flat-red-accent;
+    clip-path: polygon(0 0, 100% 0%, 100% 86%, 0% 100%);
+
+    .skills-title {
+        font-weight: 100;
+        position: relative;
+        color: $matte-white;
+        font-size: 10rem;
+        text-align: right;
+        padding: 2rem 5rem 0 0;
+        top: -75rem;
+        text-shadow: 0 .25rem 0 rgba($matte-gray-light, 0.4);
+    }
+
+    .skills-box {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 27%;
+        top: 15%;
+        font-size: 4rem;
+        z-index: 4000;
+        box-shadow: 0rem 0rem 4rem rgba($flat-black, .32);
+
+        
+        .hard-skills,
+        .soft-skills {
+            width: 57vw;
+            padding: 1.5rem 2.25rem;
+
+            .skill-list {
+
+
+                &-item {
+                    position: relative;
+                    list-style: none;
+                    text-transform: capitalize;
+                    line-height: 1.5;
+                    margin: 1rem 0;
+                    z-index: 450000;
+
+                    &-data {
+                        position: absolute;
+                        z-index: -1;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        display: inline-block;
+                        width: 60%;
+                        height: 70%;
+                        text-align: right;
+                        border-radius: 1rem;
+                        overflow: hidden;
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 3rem;
+                            background-color: $silk-blue-3;
+                            text-align: right;
+                            font-size: 2rem;
+                            padding-right: 1rem;
+                        }
+                    }
+
+                    [data-skill="html"] {
+
+                        &::before {
+                            background-color: $flat-orange;
+                            width: 90%;
+                            content: '90%';
+
+                        }
+                    }
+                    [data-skill="css"] {
+
+                        &::before {
+                            background-color: $silk-blue-4;
+                            width: 85%;
+                            content: '85%';
+                        }
+                    }
+                    [data-skill="sass"] {
+
+                        &::before {
+                            background-color: $sassy-pink;
+                            width: 70%;
+                            content: '70%';
+
+                        }
+                    }
+                    [data-skill="javascript"] {
+
+                        &::before {
+                            background-color: $flat-yellow;
+                            width: 62%;
+                            content: '62%';
+
+                        }
+                    }
+                    [data-skill="jquery"] {
+
+                        &::before {
+                            background-color: $silk-blue-5;
+                            width: 78%;
+                            content: '78%';
+
+                        }
+                    }
+                    [data-skill="git"] {
+
+                        &::before {
+                            background-color: $git-peach;
+                            width: 48%;
+                            content: '48%';
+
+                        }
+                    }
+                    [data-skill="node"] {
+
+                        &::before {
+                            background-color: $node-green;
+                            width: 23%;
+                            content: '23%';
+
+                        }
+                    }
+                    [data-skill="communication"] {
+
+                        &::before {
+                            background-color: $flat-red-accent;
+                            width: 92%;
+                            opacity: .92;
+                            content: '92%';
+
+                        }
+                    }
+                    [data-skill="humor"] {
+
+                        &::before {
+                            background-color: $flat-red-accent;
+                            width: 86%;
+                            opacity: .86;
+                            content: '86%';
+
+                        }
+                    }
+                    [data-skill="honesty"] {
+
+                        &::before {
+                            background-color: $flat-red-accent;
+                            width: 98%;
+                            opacity: .98;
+                            content: '98%';
+
+                        }
+                    }
+                    [data-skill="diligent"] {
+
+                        &::before {
+                            background-color: $flat-red-accent;
+                            width: 89%;
+                            opacity: .89;
+                            content: '89%';
+
+                        }
+                    }
+                    [data-skill="extrovert"] {
+
+                        &::before {
+                            background-color: $flat-red-accent;
+                            width: 99%;
+                            opacity: .99;
+                            content: '99%';
+
+                        }
+                    }
+                    [data-skill="friendly"] {
+
+                        &::before {
+                            background-color: $flat-red-accent;
+                            width: 94%;
+                            opacity: .94;
+                            content: '94%';
+
+                        }
+                    }
+                    [data-skill="learn"] {
+
+                        &::before {
+                            background-color: $flat-red-accent;
+                            width: 100%;
+                            content: '100%';
+
+                        }
+                    }
+
+                }
+            }
+
+            &-title {
+                text-align: center;
+            }
+        }
+        
+        .hard-skills {
+            background-color: $matte-black;
+            color: $matte-white;
+
+            .skill-list {
+
+                &-item {
+
+                    &-data {
+                        background-color: rgba($flat-white,.65);
+                        background-color: $flat-black;
+
+                        &::before {
+                            color: rgba($flat-white, .65);
+                        }
+                    }
+                }
+            }
+        }
+
+        .soft-skills {
+            background-color: $matte-white;
+            color: $matte-black;
+            
+            .skill-list {
+
+                &-item {
+
+                    &-data {
+                        background-color: rgba($flat-black,.65);
+                        background-color: $flat-white;
+
+                        &::before {
+                            color: rgba($flat-black, .65);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#projects-page {
+    position: relative;
+    z-index: 280;
+    top: -25rem;
+    width: 100vw;
+    min-height: 200vh;
+    background-color: $git-peach;
+    background-color: $silk-blue-2;
+
+    .projects-title {
+        font-size: 10rem;
+        letter-spacing: 1.34;
+        color: $matte-white;
+        position: absolute;
+        top: 25rem;
+        right: -5rem;
+        transform: rotate(90deg);
+    }
+
 }
 
 .white-text {
@@ -606,6 +882,7 @@ body {
 
 .intersect-1 {
     position: fixed;
+    z-index: 285;
     top: -202vh;
     left: 0;
     background-color: #d82433;

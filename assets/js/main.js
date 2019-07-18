@@ -28,6 +28,8 @@ const bioCreative = $(".bio-creative");
 const bioTech = $(".bio-tech");
 const bioPersonal = $(".bio-personal");
 const inter1 = $(".intersect-1");
+const skillsTitle = $(".skills-title");
+
 
 
 let enteredBio = false;
@@ -78,6 +80,10 @@ window.onscroll = function() {
         if (position >= 2000) {
             bioPersonal.css('transform', `translate3d(0rem, ${bioPosition / 50}rem,0rem)`);
         }
+
+        if (position > 4000) {
+            skillsTitle.css('transform', `translate3d(0rem, ${bioPosition / 40}rem,0rem)`);
+        }
     }
 
     
@@ -95,7 +101,7 @@ $(document).mousemove(function(e) {
     $(".cursor").css({
         top: `${e.pageY - position}px`,
         left: `${e.pageX}px`
-    });
+        });
 
     $(".cursor-2").css({
         top: `${e.pageY - position}px`,
@@ -108,7 +114,7 @@ $('a').hover(function () {
         // over
         $('.cursor').css({
             'transform': 'translate(-50%, -50%) scale(1.75)',
-            'border-color': '#fff'
+            'border-color': '#D9D9D9'
         });
         $('.cursor-2').css({
             'transform': 'translate(-50%, -50%) scale(1.75)',
@@ -119,13 +125,25 @@ $('a').hover(function () {
         // out
         $('.cursor').css({
             'transform': 'translate(-50%, -50%) scale(1)',
-            'border-color': '#bf0313'
+            'border-color': '#bf0313',
+            'opacity': '1'
         });        
         $('.cursor-2').css({
             'transform': 'translate(-50%, -50%) scale(1)',
             'border-color': '#d82433'
         });    }
 );
+
+$('a').click(function () {
+    // over
+    $('.cursor').css({
+        'transition': '.2s transform ease-in, .125s opacity ease-out',
+        'transform': 'translate(-50%, -50%) scale(12.5)',
+        'border-color': '#D9D9D9',
+        'opacity': '0.025'
+    });
+
+});
 
 
 

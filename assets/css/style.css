@@ -171,7 +171,7 @@ body::-webkit-scrollbar-thumb {
 
 .bio .occupation {
   font-weight: bolder;
-  color: #03173f;
+  color: #052055;
   text-transform: uppercase;
   line-height: 2;
 }
@@ -206,7 +206,7 @@ body::-webkit-scrollbar-thumb {
 
 .headline {
   overflow-x: hidden;
-  background: repeating-linear-gradient(45deg, rgba(239, 240, 242, 0.75), rgba(239, 240, 242, 0.75) 0.5rem, rgba(0, 0, 0, 0) 0.1rem, rgba(0, 0, 0, 0) 30rem);
+  background: repeating-linear-gradient(45deg, rgba(64, 64, 64, 0.75), rgba(13, 0, 0, 0.75) 0.5rem, rgba(0, 0, 0, 0) 0.1rem, rgba(0, 0, 0, 0) 30rem);
   min-height: 200vh;
   width: 100vw;
 }
@@ -215,7 +215,7 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   left: 2rem;
   top: 2rem;
-  z-index: 300;
+  z-index: 305;
   height: 200vh;
   width: 19.2rem;
   background-color: #eff0f2;
@@ -225,7 +225,7 @@ body::-webkit-scrollbar-thumb {
 
 .headline .nav-list {
   position: fixed;
-  z-index: 1000;
+  z-index: 400;
   width: 40rem;
   height: 100%;
   padding-top: 4rem;
@@ -332,7 +332,7 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
   overflow: hidden;
   bottom: 0%;
-  right: -2.5%;
+  right: 0%;
   width: 0rem;
   height: 90%;
   background-color: #0c0c0c;
@@ -359,15 +359,17 @@ body::-webkit-scrollbar-thumb {
 
 #bio-page {
   position: relative;
-  z-index: 200;
+  z-index: 300;
   width: 100vw;
   height: 450vh;
   background-color: #dee5f3;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   border-top: 0.1rem solid #1a59d8;
-  background: repeating-linear-gradient(-60deg, rgba(26, 89, 216, 0.75), rgba(26, 89, 216, 0.75) 0.5rem, rgba(0, 0, 0, 0) 0.1rem, rgba(0, 0, 0, 0) 40rem), -webkit-gradient(linear, left bottom, left top, from(#0D0000), to(#404040));
-  background: repeating-linear-gradient(-60deg, rgba(26, 89, 216, 0.75), rgba(26, 89, 216, 0.75) 0.5rem, rgba(0, 0, 0, 0) 0.1rem, rgba(0, 0, 0, 0) 40rem), linear-gradient(to top, #0D0000, #404040);
+  background: repeating-linear-gradient(-60deg, rgba(12, 12, 12, 0.75), rgba(12, 12, 12, 0.75) 0.5rem, rgba(0, 0, 0, 0) 0.1rem, rgba(0, 0, 0, 0) 40rem), -webkit-gradient(linear, left bottom, left top, from(#0D0000), to(#404040));
+  background: repeating-linear-gradient(-60deg, rgba(12, 12, 12, 0.75), rgba(12, 12, 12, 0.75) 0.5rem, rgba(0, 0, 0, 0) 0.1rem, rgba(0, 0, 0, 0) 40rem), linear-gradient(to top, #0D0000, #404040);
+  -webkit-box-shadow: 0rem 1rem 1.75rem rgba(12, 12, 12, 0.3);
+          box-shadow: 0rem 1rem 1.75rem rgba(12, 12, 12, 0.3);
 }
 
 #bio-page .bio-box {
@@ -397,8 +399,8 @@ body::-webkit-scrollbar-thumb {
   width: 4%;
   height: 100%;
   background: #000428;
-  background: -webkit-gradient(linear, left bottom, left top, from(#03173f), to(#03173f));
-  background: linear-gradient(to top, #03173f, #03173f);
+  background: -webkit-gradient(linear, left bottom, left top, from(#052055), to(#052055));
+  background: linear-gradient(to top, #052055, #052055);
 }
 
 #bio-page .bio-creative .bio-heading {
@@ -406,7 +408,7 @@ body::-webkit-scrollbar-thumb {
   font-family: inherit;
   font-weight: 100;
   font-size: 8rem;
-  border-right: solid 1rem #03173f;
+  border-right: solid 1rem #052055;
   text-align: right;
   padding-right: 1.5rem;
   padding-bottom: 2rem;
@@ -444,7 +446,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #bio-page .bio-tech .bio-heading {
-  color: #03173f;
+  color: #052055;
   color: #8C8A87;
   font-family: inherit;
   font-weight: 100;
@@ -525,7 +527,7 @@ body::-webkit-scrollbar-thumb {
   width: 50%;
   text-align: right;
   position: fixed;
-  z-index: 205;
+  z-index: 305;
   font-size: 8rem;
   top: 30%;
   left: -50%;
@@ -555,13 +557,254 @@ body::-webkit-scrollbar-thumb {
   color: #8C8A87;
   margin-top: 8rem;
   font-family: 'Roboto Mono', monospace;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 #skills-page {
   position: relative;
+  z-index: 290;
   width: 100vw;
-  height: 400vh;
+  height: 240vh;
   background-color: #d82433;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 86%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0%, 100% 86%, 0% 100%);
+}
+
+#skills-page .skills-title {
+  font-weight: 100;
+  position: relative;
+  color: #D9D9D9;
+  font-size: 10rem;
+  text-align: right;
+  padding: 2rem 5rem 0 0;
+  top: -75rem;
+  text-shadow: 0 0.25rem 0 rgba(140, 138, 135, 0.4);
+}
+
+#skills-page .skills-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  left: 27%;
+  top: 15%;
+  font-size: 4rem;
+  z-index: 4000;
+  -webkit-box-shadow: 0rem 0rem 4rem rgba(12, 12, 12, 0.32);
+          box-shadow: 0rem 0rem 4rem rgba(12, 12, 12, 0.32);
+}
+
+#skills-page .skills-box .hard-skills,
+#skills-page .skills-box .soft-skills {
+  width: 57vw;
+  padding: 1.5rem 2.25rem;
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item,
+#skills-page .skills-box .soft-skills .skill-list-item {
+  position: relative;
+  list-style: none;
+  text-transform: capitalize;
+  line-height: 1.5;
+  margin: 1rem 0;
+  z-index: 450000;
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item-data,
+#skills-page .skills-box .soft-skills .skill-list-item-data {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: inline-block;
+  width: 60%;
+  height: 70%;
+  text-align: right;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item-data::before,
+#skills-page .skills-box .soft-skills .skill-list-item-data::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 3rem;
+  background-color: #046bf2;
+  text-align: right;
+  font-size: 2rem;
+  padding-right: 1rem;
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item [data-skill="html"]::before,
+#skills-page .skills-box .soft-skills .skill-list-item [data-skill="html"]::before {
+  background-color: #f2441d;
+  width: 90%;
+  content: '90%';
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item [data-skill="css"]::before,
+#skills-page .skills-box .soft-skills .skill-list-item [data-skill="css"]::before {
+  background-color: #0355bf;
+  width: 85%;
+  content: '85%';
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item [data-skill="sass"]::before,
+#skills-page .skills-box .soft-skills .skill-list-item [data-skill="sass"]::before {
+  background-color: #C76495;
+  width: 70%;
+  content: '70%';
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item [data-skill="javascript"]::before,
+#skills-page .skills-box .soft-skills .skill-list-item [data-skill="javascript"]::before {
+  background-color: #f2b707;
+  width: 62%;
+  content: '62%';
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item [data-skill="jquery"]::before,
+#skills-page .skills-box .soft-skills .skill-list-item [data-skill="jquery"]::before {
+  background-color: #023e8c;
+  width: 78%;
+  content: '78%';
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item [data-skill="git"]::before,
+#skills-page .skills-box .soft-skills .skill-list-item [data-skill="git"]::before {
+  background-color: #E94F32;
+  width: 48%;
+  content: '48%';
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item [data-skill="node"]::before,
+#skills-page .skills-box .soft-skills .skill-list-item [data-skill="node"]::before {
+  background-color: #87C000;
+  width: 23%;
+  content: '23%';
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item [data-skill="communication"]::before,
+#skills-page .skills-box .soft-skills .skill-list-item [data-skill="communication"]::before {
+  background-color: #d82433;
+  width: 92%;
+  opacity: .92;
+  content: '92%';
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item [data-skill="humor"]::before,
+#skills-page .skills-box .soft-skills .skill-list-item [data-skill="humor"]::before {
+  background-color: #d82433;
+  width: 86%;
+  opacity: .86;
+  content: '86%';
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item [data-skill="honesty"]::before,
+#skills-page .skills-box .soft-skills .skill-list-item [data-skill="honesty"]::before {
+  background-color: #d82433;
+  width: 98%;
+  opacity: .98;
+  content: '98%';
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item [data-skill="diligent"]::before,
+#skills-page .skills-box .soft-skills .skill-list-item [data-skill="diligent"]::before {
+  background-color: #d82433;
+  width: 89%;
+  opacity: .89;
+  content: '89%';
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item [data-skill="extrovert"]::before,
+#skills-page .skills-box .soft-skills .skill-list-item [data-skill="extrovert"]::before {
+  background-color: #d82433;
+  width: 99%;
+  opacity: .99;
+  content: '99%';
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item [data-skill="friendly"]::before,
+#skills-page .skills-box .soft-skills .skill-list-item [data-skill="friendly"]::before {
+  background-color: #d82433;
+  width: 94%;
+  opacity: .94;
+  content: '94%';
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item [data-skill="learn"]::before,
+#skills-page .skills-box .soft-skills .skill-list-item [data-skill="learn"]::before {
+  background-color: #d82433;
+  width: 100%;
+  content: '100%';
+}
+
+#skills-page .skills-box .hard-skills-title,
+#skills-page .skills-box .soft-skills-title {
+  text-align: center;
+}
+
+#skills-page .skills-box .hard-skills {
+  background-color: #0D0000;
+  color: #D9D9D9;
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item-data {
+  background-color: rgba(239, 240, 242, 0.65);
+  background-color: #0c0c0c;
+}
+
+#skills-page .skills-box .hard-skills .skill-list-item-data::before {
+  color: rgba(239, 240, 242, 0.65);
+}
+
+#skills-page .skills-box .soft-skills {
+  background-color: #D9D9D9;
+  color: #0D0000;
+}
+
+#skills-page .skills-box .soft-skills .skill-list-item-data {
+  background-color: rgba(12, 12, 12, 0.65);
+  background-color: #eff0f2;
+}
+
+#skills-page .skills-box .soft-skills .skill-list-item-data::before {
+  color: rgba(12, 12, 12, 0.65);
+}
+
+#projects-page {
+  position: relative;
+  z-index: 280;
+  top: -25rem;
+  width: 100vw;
+  min-height: 200vh;
+  background-color: #E94F32;
+  background-color: #052055;
+}
+
+#projects-page .projects-title {
+  font-size: 10rem;
+  letter-spacing: 1.34;
+  color: #D9D9D9;
+  position: absolute;
+  top: 25rem;
+  right: -5rem;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .white-text {
@@ -583,6 +826,7 @@ body::-webkit-scrollbar-thumb {
 
 .intersect-1 {
   position: fixed;
+  z-index: 285;
   top: -202vh;
   left: 0;
   background-color: #d82433;
