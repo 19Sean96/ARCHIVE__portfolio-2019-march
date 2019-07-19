@@ -664,136 +664,83 @@ body {
                         }
                     }
 
-                    [data-skill="html"] {
-
-                        &::before {
+                    [data-skill="html"]::before {
                             background-color: $flat-orange;
                             width: 90%;
                             content: '90%';
 
-                        }
                     }
-                    [data-skill="css"] {
-
-                        &::before {
+                    [data-skill="css"]::before {
                             background-color: $silk-blue-4;
                             width: 85%;
                             content: '85%';
-                        }
                     }
-                    [data-skill="sass"] {
-
-                        &::before {
+                    [data-skill="sass"]::before {
                             background-color: $sassy-pink;
                             width: 70%;
                             content: '70%';
-
-                        }
                     }
-                    [data-skill="javascript"] {
-
-                        &::before {
+                    [data-skill="javascript"]::before {
                             background-color: $flat-yellow;
                             width: 62%;
                             content: '62%';
-
-                        }
                     }
-                    [data-skill="jquery"] {
-
-                        &::before {
+                    [data-skill="jquery"]::before {
                             background-color: $silk-blue-5;
                             width: 78%;
                             content: '78%';
-
-                        }
                     }
-                    [data-skill="git"] {
-
-                        &::before {
+                    [data-skill="git"]::before {
                             background-color: $git-peach;
                             width: 48%;
                             content: '48%';
-
-                        }
                     }
-                    [data-skill="node"] {
-
-                        &::before {
+                    [data-skill="node"]::before {
                             background-color: $node-green;
                             width: 23%;
                             content: '23%';
-
-                        }
                     }
-                    [data-skill="communication"] {
-
-                        &::before {
+                    [data-skill="communication"]::before {
                             background-color: $flat-red-accent;
                             width: 92%;
                             opacity: .92;
                             content: '92%';
-
-                        }
                     }
-                    [data-skill="humor"] {
-
-                        &::before {
+                    [data-skill="humor"]::before {
                             background-color: $flat-red-accent;
                             width: 86%;
                             opacity: .86;
                             content: '86%';
-
-                        }
                     }
-                    [data-skill="honesty"] {
-
-                        &::before {
+                    [data-skill="honesty"]::before {
                             background-color: $flat-red-accent;
                             width: 98%;
                             opacity: .98;
                             content: '98%';
 
-                        }
                     }
-                    [data-skill="diligent"] {
-
-                        &::before {
+                    [data-skill="diligent"]::before {
                             background-color: $flat-red-accent;
                             width: 89%;
                             opacity: .89;
                             content: '89%';
-
-                        }
                     }
-                    [data-skill="extrovert"] {
-
-                        &::before {
+                    [data-skill="extrovert"]::before {
                             background-color: $flat-red-accent;
                             width: 99%;
                             opacity: .99;
                             content: '99%';
-
-                        }
                     }
-                    [data-skill="friendly"] {
-
-                        &::before {
+                    [data-skill="friendly"]::before {
                             background-color: $flat-red-accent;
                             width: 94%;
                             opacity: .94;
                             content: '94%';
-
-                        }
                     }
-                    [data-skill="learn"] {
-
-                        &::before {
+                    [data-skill="learn"]::before {
                             background-color: $flat-red-accent;
                             width: 100%;
                             content: '100%';
-
-                        }
                     }
 
                 }
@@ -851,18 +798,188 @@ body {
     z-index: 280;
     top: -25rem;
     width: 100vw;
-    min-height: 200vh;
+    min-height: 500vh;
     background-color: $git-peach;
-    background-color: $silk-blue-2;
+
+    background: linear-gradient(60deg, #f83600, #fe8c00); 
 
     .projects-title {
         font-size: 10rem;
         letter-spacing: 1.34;
         color: $matte-white;
         position: absolute;
-        top: 25rem;
+        top: 22rem;
         right: -5rem;
         transform: rotate(90deg);
+
+
+    }
+
+    .projects-box {    
+        border-radius: .5rem;
+        position: absolute;
+        z-index: 450;
+        right: 5%;
+        top: 20%;
+        width:70vw;
+        min-height: 50rem;
+    }
+
+    .project {
+        position: relative;
+        width: 100%;
+        height: 60rem;
+        // display: flex;
+        &:nth-child(even) {
+            background-color: $flat-black;
+            left: 1rem;
+
+            .project-image-caption {
+                left: 0;
+                clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 0% 100%);
+
+                &-header {
+                    text-align: right;
+                }
+            }
+        }
+
+        &:nth-child(odd) {
+            background-color: $flat-white;
+            right: 1rem;
+
+            .project-image-caption {
+                right: 0;
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
+
+                &-header {
+                    text-align: left;
+                }
+            }
+        }
+
+        &-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: url(../media/giphy.PNG); 
+            background-size: cover, 50% 50%;
+            filter: sepia(60%) brightness(36%);
+
+
+
+            &#giphy-img { 
+                background: url(../media/giphy.PNG); 
+                background-size: cover, 50% 50%;
+
+            }
+            &#crime-lense-img { 
+                background: url(../media/crime-lense.PNG); 
+                background-size: cover, 50% 50%;
+
+            }
+            &#word-guess-img { 
+                background: url(../media/word-guess.PNG); 
+                background-size: cover, 50% 50%;
+            }
+            &#trivia-img { 
+                background: url(../media/trivia.PNG); 
+                background-size: cover, 50% 50%;
+
+            }
+            &#jewels-img {
+                 background: url(../media/jewels.PNG); 
+                 background-size: cover, 50% 50%;
+                }
+            &#electrolysis-img { 
+                background: url(../media/electrolysis.PNG); 
+                background-size: cover, 50% 50%;
+            }
+
+            &-container {
+                position: relative;
+                width: 50%;
+                height: 100%;
+            }
+
+            &-caption {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: 56%;
+                padding: 5rem;
+
+                &-header {
+                    font-size: 3.7rem;
+
+                }
+            }
+        }
+    }
+
+    .project1 {
+
+        .project-image-caption {
+            background-color: rgba($flat-yellow, .62);
+            background-color: rgba($matte-white, .62);
+            // background-color: rgba($matte-black, .62);
+
+        }
+    }
+
+
+    .project2 {
+
+        .project-image-caption {
+            background-color: rgba(rgb(0, 110, 92), .62);
+            background-color: rgba($matte-white, .62);
+            // background-color: rgba($matte-black, .62);
+
+        }
+    }
+
+
+    .project3 {
+
+        .project-image-caption {
+            background-color: rgba($flat-red-dark, .62);
+            background-color: rgba($matte-white, .62);
+            // background-color: rgba($matte-black, .62);
+
+        }
+    }
+
+
+    .project4 {
+
+        .project-image-caption {
+            background-color: rgba($silk-blue-2, .62);
+            background-color: rgba($matte-white, .62);
+            // background-color: rgba($matte-black, .62);
+
+        }
+    }
+
+
+    .project5 {
+
+        .project-image-caption {
+            background-color: rgba($matte-white, .62);
+            // background-color: rgba($matte-black, .62);
+
+        }
+    }
+
+
+    .project6 {
+
+        .project-image-caption {
+            background-color: rgba($matte-black, .62);
+            background-color: rgba($matte-white, .62);
+
+        }
     }
 
 }

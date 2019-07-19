@@ -29,6 +29,7 @@ const bioTech = $(".bio-tech");
 const bioPersonal = $(".bio-personal");
 const inter1 = $(".intersect-1");
 const skillsTitle = $(".skills-title");
+const projectsBox = $(".projects-box");
 
 
 
@@ -83,6 +84,10 @@ window.onscroll = function() {
 
         if (position > 4000) {
             skillsTitle.css('transform', `translate3d(0rem, ${bioPosition / 40}rem,0rem)`);
+        } 
+        if (position > 5500) {
+            bioPosition = position -5500;
+            projectsBox.css('transform', `translate3d(0rem, ${bioPosition / -47}rem,0rem)`);
         }
     }
 
