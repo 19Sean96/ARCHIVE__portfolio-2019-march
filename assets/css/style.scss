@@ -827,13 +827,50 @@ body {
     }
 
     .project {
+        border-radius: .2rem;
+        overflow: hidden;
         position: relative;
         width: 100%;
         height: 60rem;
         // display: flex;
+
+
+
         &:nth-child(even) {
             background-color: $flat-black;
             left: 1rem;
+
+            .project-btn {
+                display: inline-block;
+                // width: 100%;
+                text-align: center;
+                font-size: 4rem;
+                font-family: 'Roboto Mono', monospace;
+                text-decoration: none;
+                color: $flat-yellow-accent;
+                opacity: 0;
+                transition: .2s all;
+                padding: 2rem 3rem;
+                border: .1rem $flat-yellow solid;
+                border-radius: .5rem;
+                background-color: rgba($matte-white, .1);
+    
+                &-container {
+                    position: absolute;
+                    z-index: 500;
+                    top: 0;
+                    right: 0;
+                    width: 50%;
+                    height: 100%;
+                    background-color: transparent;
+    
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    flex-wrap: wrap;
+                    align-content: space-evenly;
+                }
+            }
 
             .project-image-caption {
                 left: 0;
@@ -842,12 +879,48 @@ body {
                 &-header {
                     text-align: right;
                 }
+
+                &-content {
+                    margin: 4rem auto 2rem 0;
+                }
             }
         }
 
         &:nth-child(odd) {
             background-color: $flat-white;
             right: 1rem;
+
+            .project-btn {
+                display: inline-block;
+                // width: 100%;
+                text-align: center;
+                font-size: 4rem;
+                font-family: 'Roboto Mono', monospace;
+                text-decoration: none;
+                color: $flat-yellow-accent;
+                opacity: 0;
+                transition: .2s all;
+                padding: 2rem 3rem;
+                border: .1rem $flat-yellow solid;
+                border-radius: .5rem;
+                background-color: rgba($matte-white, .1);
+
+                &-container {
+                    position: absolute;
+                    z-index: 500;
+                    top: 0;
+                    left: 0;
+                    width: 50%;
+                    height: 100%;
+                    background-color: transparent;
+    
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    flex-wrap: wrap;
+                    align-content: space-evenly;
+                }
+            }
 
             .project-image-caption {
                 right: 0;
@@ -856,6 +929,22 @@ body {
                 &-header {
                     text-align: left;
                 }
+
+                &-content {
+                    margin: 4rem 0 2rem auto;
+                }
+            }
+        }
+
+        &:hover {
+
+            .project-btn {
+                opacity: 1;
+            }
+
+            .project-image {
+                filter: brightness(36%) blur(.2rem);
+
             }
         }
 
@@ -867,9 +956,10 @@ body {
             height: 100%;
             background: url(../media/giphy.PNG); 
             background-size: cover, 50% 50%;
-            filter: sepia(60%) brightness(36%);
+            filter: brightness(100%) blur(0);
 
-
+            transition: .2s all;
+            transform: scale(1.15);
 
             &#giphy-img { 
                 background: url(../media/giphy.PNG); 
@@ -910,10 +1000,43 @@ body {
                 top: 0;
                 height: 100%;
                 width: 56%;
-                padding: 5rem;
+                padding: 3.5rem;
 
                 &-header {
-                    font-size: 3.7rem;
+                    font-size: 3.8rem;
+                    color: $flat-white;
+                    font-weight: 100;
+                    // color: $silk-blue-2;
+
+                }
+
+                &-sub-header {
+                    font-size: 3rem;
+                    color: $silk-blue-5;
+                    text-align: center;
+                    line-height: 1.7;
+                    margin: 2rem 0 0rem;
+                }
+
+                &-list {
+                    font-size: 2.5rem;
+                    text-align: center;
+
+                    &-item {
+                        list-style: none;
+                        color: $flat-yellow-accent;
+                        color: $matte-white;
+
+
+                    }
+                }
+
+                &-content {
+                    font-size: 1.8rem;
+                    width: 80%;
+                    text-align: justify;
+                    color: $matte-white;
+                    line-height: 1.3;
 
                 }
             }
@@ -923,9 +1046,9 @@ body {
     .project1 {
 
         .project-image-caption {
-            background-color: rgba($flat-yellow, .62);
-            background-color: rgba($matte-white, .62);
-            // background-color: rgba($matte-black, .62);
+            background-color: rgba($flat-blue, .62);
+            // background-color: rgba($matte-white, .62);
+            background-color: rgba($matte-black, .62);
 
         }
     }
@@ -936,7 +1059,7 @@ body {
         .project-image-caption {
             background-color: rgba(rgb(0, 110, 92), .62);
             background-color: rgba($matte-white, .62);
-            // background-color: rgba($matte-black, .62);
+            background-color: rgba($matte-black, .62);
 
         }
     }
@@ -947,7 +1070,7 @@ body {
         .project-image-caption {
             background-color: rgba($flat-red-dark, .62);
             background-color: rgba($matte-white, .62);
-            // background-color: rgba($matte-black, .62);
+            background-color: rgba($matte-black, .62);
 
         }
     }
@@ -958,7 +1081,7 @@ body {
         .project-image-caption {
             background-color: rgba($silk-blue-2, .62);
             background-color: rgba($matte-white, .62);
-            // background-color: rgba($matte-black, .62);
+            background-color: rgba($matte-black, .62);
 
         }
     }
@@ -968,7 +1091,7 @@ body {
 
         .project-image-caption {
             background-color: rgba($matte-white, .62);
-            // background-color: rgba($matte-black, .62);
+            background-color: rgba($matte-black, .62);
 
         }
     }
@@ -978,7 +1101,7 @@ body {
 
         .project-image-caption {
             background-color: rgba($matte-black, .62);
-            background-color: rgba($matte-white, .62);
+            // background-color: rgba($matte-white, .62);
 
         }
     }
@@ -1378,6 +1501,16 @@ body {
             
             &-item {
                 font-size: 2.25rem;
+
+                &:not(#resume)::before {
+                    bottom: .25rem;
+                    height: 45%;
+                }
+
+                &:not(#resume)::after {
+                    top: .25rem;
+                    height: 45%;
+                }
             }
             
             #resume {
@@ -1428,6 +1561,14 @@ body {
 
         .bio-personal {
             top: 50%;
+
+            .bio-heading {
+                font-size: 5.2rem;
+            }
+
+            .bio-par {
+                font-size: 2.3rem;
+            }
         }
     }
 
@@ -1447,11 +1588,12 @@ body {
         }
 
         .skills-box {
-            left: 27%;
+            left: 24%;
+            font-size: 3rem;
 
             .hard-skills,
             .soft-skills {
-                width: 67.5vw;
+                width: 69vw;
             }
         }
     }
