@@ -29,7 +29,7 @@
             </div>
             <div class="bio-container">
                 <h2 class="bio animated slideInRight">
-                    Your Future <span class="occupation">Designer</span>.
+                    Your Future <br><span class="occupation">Designer</span>.
                 </h2>
             </div>
             <div class="left-background">
@@ -44,10 +44,10 @@
                 <a href="#projects-page" class="nav-list-item animated fadeInLeft" id="projects">&lbbrk;projects&rbbrk;
 
                 </a>
-                <a href="#" class="nav-list-item animated fadeInLeft" id="contact">contact&phone;
+                <a href="#contact-page" class="nav-list-item animated fadeInLeft" id="contact">contact&phone;
 
                 </a>
-                <a href="#" class="nav-list-item animated fadeIn" id="resume">resume&smashp;
+                <a href="./assets/resume.pdf" class="nav-list-item animated fadeIn" id="resume" download>resume&smashp;<span class="file-size"> 83KB</span>
                 </a>
             </aside>
         </section>
@@ -58,7 +58,7 @@
         <div class="bio-creative bio-box">
             <h3 class="bio-heading">Creative Pioneer</h3>
             <p class="bio-par">
-                <span class="quote">"</span>I started out with doodling, as most kids; but as I got older, I never
+                I started out with doodling, as most kids; but as I got older, I never
                 stopped. <br>I began exploring different art forms (ink illustration, acrylic paint,digital illustration
                 & music).<br>
                 Recently, I've been focusing my creativity on the web as a UI/UX designer & developer.
@@ -78,8 +78,8 @@
             <h3 class="bio-heading">The Little Things</h3>
 
             <p class="bio-par">
-                I started my development journey in 2015 when I was trying to create a custom Tumblr theme for myself. I
-                discovered CSS, and I was captivated ever since. <br>
+                
+                <br>
                 Since that point, I spent the next few years strictly focusing on CSS part time. Now, I'm enrolled in a
                 Full Stack Coding Bootcamp through University of Arizona learning the ins & outs of web technology.
             </p>
@@ -208,6 +208,38 @@
             </div>
         </div>
     </section>
+    <section id="contact-page">
+        <h2 class="contact-title">
+            Let's Talk &#128578;
+        </h2>
+        <div class="contact-form-container">
+            <form action="submit" class="contact-form">
+
+                <div class="name-input-container input-container">
+                    <input placeholder="your name" class="input" type="text" name="name" id="name-input">
+                    <label for="name" class="name-input-label">What Should I Call You?</label>
+                </div>
+                
+                <div class="email-input-container input-container">
+                    <input placeholder="your email"  class="input" type="email" name="email" id="email-input">
+                    <label for="email" class="email-input-label">How Can I Reach You?</label>
+                </div>
+
+                <div class="message-input-container input-container">
+                    <div name="message" class="input" id="message-input" contenteditable>
+                    </div>
+                    <label class="message-input-label" for="message">What Do You Want To Talk About?</label>
+                    <span class="placeholder-message">
+                            your message
+                    </span>
+                </div>
+
+                <div class="submit-btn-container">
+                    <button type="submit" id="submit-btn">Send</button>
+                </div>
+            </form>
+        </div>
+    </section>
     <h2 class="bio-title animated">Allow me to introduce myself:
         <p class="bio-subtitle animated flash">scroll down</p>
     </h2>
@@ -216,6 +248,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- <script src="./assets/js/data.js"></script> -->
     <script src="./assets/js/main.js"></script>
 </body>
 

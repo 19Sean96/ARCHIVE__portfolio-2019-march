@@ -189,7 +189,7 @@ body::-webkit-scrollbar-thumb {
   display: inline-block;
   position: fixed;
   top: 25%;
-  left: 55%;
+  left: 35%;
   z-index: 5;
   width: 50vw;
 }
@@ -217,7 +217,7 @@ body::-webkit-scrollbar-thumb {
   top: 2rem;
   z-index: 305;
   height: 200vh;
-  width: 19.2rem;
+  width: 14vw;
   background-color: #eff0f2;
   background: repeating-linear-gradient(45deg, #0c0c0c, #0c0c0c 2.5rem, #eff0f2 2.5rem, #eff0f2 5rem);
   background-size: cover;
@@ -225,8 +225,8 @@ body::-webkit-scrollbar-thumb {
 
 .headline .nav-list {
   position: fixed;
-  z-index: 400;
-  width: 40rem;
+  z-index: 600;
+  width: 35rem;
   height: 100%;
   padding-top: 4rem;
 }
@@ -238,7 +238,7 @@ body::-webkit-scrollbar-thumb {
   line-height: 1.75;
   color: #f2a007;
   text-decoration: none;
-  font-size: 3.5rem;
+  font-size: 3.25rem;
   background-color: #0c0c0c;
   width: 80%;
   text-align: left;
@@ -382,11 +382,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 #bio-page .bio-creative {
-  left: 55%;
+  left: 54%;
   top: 32.5%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 70%;
+  width: 65%;
   background-color: #F22233;
   background: linear-gradient(45deg, #F22233, #f2441d);
 }
@@ -420,7 +420,7 @@ body::-webkit-scrollbar-thumb {
   width: 90%;
   text-align: left;
   line-height: 1.75;
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: bolder;
 }
 
@@ -468,25 +468,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 #bio-page .bio-personal {
-  font-size: 3rem;
   background: radial-gradient(#f2b707, #f2a007);
-  top: 57.5%;
+  top: 58.5%;
   left: 20%;
-  width: 70%;
-}
-
-#bio-page .bio-personal::before {
-  content: '';
-  position: absolute;
-  top: -17.5rem;
-  right: 4%;
-  width: 2%;
-  height: 100%;
-  background: #000428;
-  background: -webkit-gradient(linear, left bottom, left top, from(#bf0313), to(#F22233));
-  background: linear-gradient(to top, #bf0313, #F22233);
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  width: 75%;
 }
 
 #bio-page .bio-personal::after {
@@ -523,7 +508,7 @@ body::-webkit-scrollbar-thumb {
 
 .bio-title {
   font-family: 'Montserrat', sans-serif;
-  display: inline-block;
+  display: none;
   width: 50%;
   text-align: right;
   position: fixed;
@@ -556,6 +541,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 1.75rem;
   color: #8C8A87;
   margin-top: 8rem;
+  padding-bottom: 2rem;
   font-family: 'Roboto Mono', monospace;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
@@ -595,7 +581,7 @@ body::-webkit-scrollbar-thumb {
       -ms-flex-direction: column;
           flex-direction: column;
   position: absolute;
-  left: 27%;
+  left: 30%;
   top: 15%;
   font-size: 4rem;
   z-index: 4000;
@@ -605,7 +591,7 @@ body::-webkit-scrollbar-thumb {
 
 #skills-page .skills-box .hard-skills,
 #skills-page .skills-box .soft-skills {
-  width: 57vw;
+  width: 62vw;
   padding: 1.5rem 2.25rem;
 }
 
@@ -791,8 +777,9 @@ body::-webkit-scrollbar-thumb {
   z-index: 280;
   top: -25rem;
   width: 100vw;
-  min-height: 500vh;
+  height: 550vh;
   background-color: #E94F32;
+  margin-bottom: -25rem;
   background: linear-gradient(60deg, #f83600, #fe8c00);
 }
 
@@ -811,7 +798,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: .5rem;
   position: absolute;
   z-index: 450;
-  right: 5%;
+  right: 3%;
   top: 20%;
   width: 70vw;
   min-height: 50rem;
@@ -942,6 +929,131 @@ body::-webkit-scrollbar-thumb {
   background-color: rgba(217, 217, 217, 0.62);
 }
 
+#contact-page {
+  position: relative;
+  z-index: 500;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0453f2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eff0f2), to(#D9D9D9));
+  background: linear-gradient(to bottom, #eff0f2, #D9D9D9);
+}
+
+#contact-page .contact-title {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  left: 52%;
+  -webkit-transform: translateX(-40%);
+          transform: translateX(-40%);
+  top: 10rem;
+  font-size: 7.7rem;
+  font-family: 'Roboto Mono', monospace;
+}
+
+#contact-page .contact-form-container {
+  position: absolute;
+  width: 55vw;
+  height: 50vh;
+  top: 35%;
+  left: 52.5%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+#contact-page .contact-form .submit-btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#contact-page .contact-form .submit-btn-container #submit-btn {
+  position: relative;
+  padding: 1.5rem 3rem;
+  background-color: transparent;
+  font-size: 2.5rem;
+  color: #eff0f2;
+  color: #0D0000;
+  font-family: 'Roboto Mono', monospace;
+  border: 0;
+  text-transform: uppercase;
+  font-weight: bolder;
+  -webkit-transition: .125s all linear;
+  transition: .125s all linear;
+}
+
+#contact-page .contact-form .submit-btn-container #submit-btn:hover {
+  color: #0D0000;
+  color: #eff0f2;
+}
+
+#contact-page .contact-form .submit-btn-container #submit-btn:hover::before {
+  height: 100%;
+  width: 100%;
+}
+
+#contact-page .contact-form .submit-btn-container #submit-btn::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 0rem;
+  background-color: #f2a007;
+  -webkit-transition: .125s all linear;
+  transition: .125s all linear;
+}
+
+#contact-page .contact-form .input {
+  font-size: 3rem;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  background-color: transparent;
+  padding: 2.5rem 3rem 1rem;
+  line-height: 3rem;
+  border: 0;
+  border-bottom: 0.25rem solid #87C000;
+}
+
+#contact-page .contact-form .input:focus, #contact-page .contact-form .input:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: 0;
+}
+
+#contact-page .contact-form .input-container {
+  width: 100%;
+  position: relative;
+  margin: 3rem 0;
+}
+
+#contact-page .contact-form .input-container .placeholder-message {
+  pointer-events: none;
+  position: absolute;
+  left: 14%;
+  bottom: 40%;
+  font-size: 3rem;
+  color: #757575;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+#contact-page .contact-form label {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  font-size: 1.75rem;
+  pointer-events: none;
+}
+
 .white-text {
   font-family: inherit;
   color: #eff0f2;
@@ -976,5 +1088,210 @@ body::-webkit-scrollbar-thumb {
   font-size: 8.25rem;
   font-family: 'Roboto Mono', monospace;
   line-height: 1;
+}
+
+.file-size {
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .headline .nav-list {
+    width: 32.5rem;
+  }
+  #skills-page .skills-title {
+    font-size: 9rem;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .headline .name {
+    font-size: 9rem;
+  }
+  .headline .name-container {
+    left: 50%;
+    top: 15%;
+  }
+  .headline .bio {
+    font-size: 5rem;
+  }
+  .headline .bio-container {
+    top: 30rem;
+    right: 0;
+  }
+  .headline .nav-list {
+    width: 30rem;
+  }
+  .headline .nav-list-item {
+    font-size: 3rem;
+  }
+  .headline .nav-list #resume::before {
+    font-size: 2.5rem;
+  }
+  #bio-page .bio-box {
+    padding: 2rem 4rem 3rem;
+  }
+  #bio-page .bio-creative {
+    left: 60%;
+  }
+  #bio-page .bio-creative .bio-heading {
+    font-size: 6.5rem;
+    padding-right: 4rem;
+  }
+  #bio-page .bio-creative .bio-par {
+    text-align: center;
+    line-height: 1.6;
+    font-size: 3rem;
+  }
+  #bio-page .bio-tech {
+    right: 4.5%;
+    width: 67%;
+  }
+  #bio-page .bio-tech .bio-heading {
+    font-size: 6.5rem;
+  }
+  #bio-page .bio-tech .bio-par {
+    padding-left: 2.5%;
+    font-size: 2.75rem;
+  }
+  #bio-page .bio-personal {
+    top: 54%;
+    left: 27%;
+    width: 72%;
+  }
+  #bio-page .bio-personal::after {
+    left: 5%;
+    top: 20rem;
+  }
+  #bio-page .bio-personal .bio-heading {
+    font-size: 6rem;
+    padding-left: 2.25rem;
+  }
+  #bio-page .bio-personal .bio-par {
+    padding-left: 5%;
+    font-size: 2.75rem;
+  }
+  .bio-title {
+    font-size: 6.5rem;
+  }
+  .bio-title .bio-subtitle {
+    margin-top: 6rem;
+  }
+  #skills-page .skills-title {
+    font-size: 7.75rem;
+  }
+  #skills-page .skills-box {
+    left: 27%;
+  }
+  #skills-page .skills-box .hard-skills,
+  #skills-page .skills-box .soft-skills {
+    width: 67.5vw;
+  }
+  #projects-page {
+    height: 400vh;
+  }
+  #projects-page .projects-box {
+    right: 2.5%;
+    width: 67.5vw;
+  }
+  #projects-page .projects-box .project {
+    height: 40rem;
+  }
+  #projects-page .projects-box .project-image-caption-header {
+    font-size: 2.5rem;
+  }
+  #contact-page .contact-title {
+    font-size: 6.5rem;
+  }
+  #contact-page .contact-form .input {
+    font-size: 2.5rem;
+  }
+  #contact-page .contact-form .input-container .placeholder-message {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 1010px) {
+  #contact-page .contact-title {
+    font-size: 5.25rem;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .headline .nav-list {
+    width: 25rem;
+  }
+  .headline .nav-list #resume {
+    width: 100%;
+  }
+  #bio-page .bio-personal {
+    top: 56%;
+  }
+  .bio-title {
+    font-size: 5.75rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .headline .nav-list {
+    width: 20rem;
+  }
+  .headline .nav-list-item {
+    font-size: 2.25rem;
+  }
+  .headline .nav-list #resume {
+    width: 100%;
+  }
+  .headline .nav-list #resume::before {
+    font-size: 1.9rem;
+  }
+  #bio-page {
+    height: 350vh;
+  }
+  #bio-page .bio-box {
+    padding: 1rem 2rem 1.5rem;
+  }
+  #bio-page .bio-creative {
+    left: 58%;
+    width: 72%;
+    top: 25.5%;
+  }
+  #bio-page .bio-creative .bio-heading {
+    width: 100%;
+    font-size: 5rem;
+  }
+  #bio-page .bio-creative .bio-par {
+    font-size: 2.25rem;
+    text-align: right;
+  }
+  #bio-page .bio-tech {
+    top: 43%;
+    width: 69%;
+  }
+  #bio-page .bio-tech .bio-heading {
+    font-size: 5.5rem;
+  }
+  #bio-page .bio-tech .bio-par {
+    font-size: 2.5rem;
+  }
+  #bio-page .bio-personal {
+    top: 50%;
+  }
+  .bio-title {
+    font-size: 5rem;
+  }
+  .bio-title .bio-subtitle {
+    padding-bottom: 4rem;
+    margin-top: 4rem;
+  }
+  #skills-page .skills-title {
+    font-size: 6rem;
+  }
+  #skills-page .skills-box {
+    left: 27%;
+  }
+  #skills-page .skills-box .hard-skills,
+  #skills-page .skills-box .soft-skills {
+    width: 67.5vw;
+  }
 }
 /*# sourceMappingURL=style.css.map */
