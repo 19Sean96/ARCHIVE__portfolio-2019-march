@@ -36,11 +36,14 @@ let enteredBio = false;
 let prevPos;
 let bioPosition = 0;
 window.onscroll = function() {
-    console.log(window.screen.availHeight);
+    // console.log(window.screen.availHeight);
     let position =
         document.documentElement.scrollTop || document.body.scrollTop;
+
+    position = position * ( window.innerHeight / 722 );
     topPos = position / 500;
-    // console.log(position);
+    console.log(window.innerHeight);
+    console.log(position);
 
     if (window.innerWidth < 850) {
         position = position * 1.2;
@@ -58,7 +61,7 @@ window.onscroll = function() {
         transform: `translate3d(0rem,${topPos * 15}rem, 0rem)`
     });
 
-    if ((position < 700 && enteredBio)) {
+    if ((position < (700 * (window.innerHeight / 722)) && enteredBio)) {
         bioTitle
             .removeClass("zoomIn")
             .addClass("zoomOut");
@@ -67,7 +70,8 @@ window.onscroll = function() {
             bioTitle.css("display", "none");
 
         }
-    } else if (position >= 700 && position < 1374) {
+    } else if (position >= (700 * (window.innerHeight / 722)) 
+                && position < (1374 * (window.innerHeight / 722))) {
         enteredBio = true;
         bioPosition = position - 700;
         // bioTitle.css({
@@ -248,3 +252,7 @@ window.setInterval(switchText, 1500);
 //     console.log(window.innerWidth);
 // },
 // 100);
+
+window.addEventListener('resize' , function(e) {
+    console.log(e.target.innerHeight);
+});
