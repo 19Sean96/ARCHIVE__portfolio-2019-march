@@ -363,7 +363,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   z-index: 300;
   width: 100vw;
-  height: 450vh;
+  height: 500vh;
   background-color: #dee5f3;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
@@ -410,7 +410,7 @@ body::-webkit-scrollbar-thumb {
   color: #f2b707;
   font-family: inherit;
   font-weight: 100;
-  font-size: 12vh;
+  font-size: 10vh;
   border-right: solid 1rem #052055;
   text-align: right;
   padding-right: 1.5rem;
@@ -423,7 +423,7 @@ body::-webkit-scrollbar-thumb {
   width: 90%;
   text-align: left;
   line-height: 1.75;
-  font-size: 5vh;
+  font-size: 4.3vh;
   font-weight: bolder;
 }
 
@@ -431,7 +431,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
   top: 52.5%;
   right: 1%;
-  width: 60%;
+  width: 65%;
   z-index: 150;
 }
 
@@ -465,7 +465,7 @@ body::-webkit-scrollbar-thumb {
   width: 90%;
   text-align: left;
   line-height: 1.75;
-  font-size: 5vh;
+  font-size: 4.75vh;
   font-weight: bolder;
 }
 
@@ -480,7 +480,7 @@ body::-webkit-scrollbar-thumb {
   content: '';
   position: absolute;
   top: 15rem;
-  left: 15%;
+  left: 9%;
   width: 1.5%;
   height: 75%;
   background: #F22233;
@@ -492,7 +492,7 @@ body::-webkit-scrollbar-thumb {
   color: #f2441d;
   font-family: inherit;
   font-weight: 100;
-  font-size: 12vh;
+  font-size: 11vh;
   text-align: left;
   padding-left: 1.5rem;
   margin-bottom: 2rem;
@@ -500,11 +500,11 @@ body::-webkit-scrollbar-thumb {
 
 #bio-page .bio-personal .bio-par {
   color: #0D0000;
-  padding-left: 15%;
+  padding-left: 10%;
   width: 90%;
   text-align: left;
   line-height: 1.75;
-  font-size: 5vh;
+  font-size: 4.3vh;
   font-weight: bolder;
 }
 
@@ -517,7 +517,6 @@ body::-webkit-scrollbar-thumb {
   z-index: 305;
   font-size: 8rem;
   top: 30%;
-  left: -50%;
   left: 40%;
   padding: 2rem 4rem;
   color: #dee5f3;
@@ -570,7 +569,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 10rem;
   text-align: right;
   padding: 2rem 5rem 0 0;
-  top: -75rem;
+  top: -35rem;
   text-shadow: 0 0.25rem 0 rgba(140, 138, 135, 0.4);
 }
 
@@ -870,7 +869,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #projects-page .project:nth-child(even) .project-image-caption-content {
-  margin: 4rem auto 2rem 0;
+  margin: 2.5rem auto 2rem 0;
 }
 
 #projects-page .project:nth-child(odd) {
@@ -929,7 +928,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #projects-page .project:nth-child(odd) .project-image-caption-content {
-  margin: 4rem 0 2rem auto;
+  margin: 2.5rem 0 2rem auto;
 }
 
 #projects-page .project:hover .project-btn {
@@ -997,8 +996,8 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 56%;
-  padding: 3.5rem;
+  width: 66%;
+  padding: 1.75rem 3.5rem 2rem;
 }
 
 #projects-page .project-image-caption-header {
@@ -1012,7 +1011,7 @@ body::-webkit-scrollbar-thumb {
   color: #023e8c;
   text-align: center;
   line-height: 1.7;
-  margin: 2rem 0 0rem;
+  margin: 0;
 }
 
 #projects-page .project-image-caption-list {
@@ -1215,10 +1214,10 @@ body::-webkit-scrollbar-thumb {
   left: 0;
   background-color: #d82433;
   height: 208vh;
-  width: 33vw;
+  width: 26vw;
   background: radial-gradient(black 1.2rem, transparent 1.5rem), linear-gradient(rgba(255, 255, 255, 0) 4px, transparent 0), linear-gradient(90deg, transparent 50px, transparent 51px, #0c0c0c 51px, #0c0c0c 52px, transparent 53px, transparent 75px), linear-gradient(-90deg, transparent 51px, transparent 52px, #0c0c0c 52px, #0c0c0c 53px, transparent 54px, transparent 75px), rgba(255, 255, 255, 0);
   background-size: 5rem 5rem,100% 6px, 5rem 5rem, 5rem 5rem;
-  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  background-position: 100% 100%, 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
 }
 
 .quote {
@@ -1324,7 +1323,10 @@ body::-webkit-scrollbar-thumb {
     width: 67.5vw;
   }
   #projects-page {
-    height: 400vh;
+    height: 360vh;
+  }
+  #projects-page .projects-title {
+    font-size: 8rem;
   }
   #projects-page .projects-box {
     right: 2.5%;
@@ -1333,8 +1335,22 @@ body::-webkit-scrollbar-thumb {
   #projects-page .projects-box .project {
     height: 40rem;
   }
+  #projects-page .projects-box .project:nth-child(even) .project-btn, #projects-page .projects-box .project:nth-child(odd) .project-btn {
+    font-size: 2rem;
+  }
   #projects-page .projects-box .project-image-caption-header {
     font-size: 2.5rem;
+  }
+  #projects-page .projects-box .project-image-caption-sub-header {
+    font-size: 2rem;
+  }
+  #projects-page .projects-box .project-image-caption-list {
+    font-size: 1.8rem;
+  }
+  #projects-page .projects-box .project-image-caption-content {
+    font-size: 1.5rem;
+    width: 85%;
+    padding-top: -4rem;
   }
   #contact-page .contact-title {
     font-size: 6.5rem;
@@ -1369,6 +1385,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media only screen and (max-width: 850px) {
+  .headline .left-background {
+    left: .5rem;
+    top: .5rem;
+  }
   .headline .nav-list {
     width: 20rem;
   }
@@ -1444,6 +1464,108 @@ body::-webkit-scrollbar-thumb {
   #skills-page .skills-box .hard-skills,
   #skills-page .skills-box .soft-skills {
     width: 69vw;
+  }
+  #projects-page {
+    height: 350vh;
+  }
+  #projects-page .projects-title {
+    top: 19rem;
+    font-size: 6.5rem;
+  }
+  #projects-page .projects-box {
+    width: 75vw;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .headline {
+    min-height: 175vh;
+  }
+  .headline .name {
+    font-size: 7rem;
+  }
+  .headline .name-container {
+    left: 40%;
+    top: 20%;
+  }
+  .headline .bio {
+    font-size: 4rem;
+  }
+  .headline .bio-container {
+    width: 50rem;
+  }
+  #bio-page .bio-tech .bio-heading {
+    font-size: 4.75rem;
+  }
+  #bio-page .bio-tech .bio-par {
+    font-size: 2.3rem;
+  }
+  .bio-title {
+    font-size: 4.6rem;
+    width: 60%;
+    left: 30%;
+  }
+  #skills-page {
+    height: 220vh;
+  }
+  .intersect-1 {
+    width: 25vw;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #skills-page .skills-title {
+    top: -32rem;
+    font-size: 5.25rem;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .headline {
+    min-height: 150vh;
+  }
+  .headline .name {
+    font-size: 6rem;
+  }
+  .headline .name-container {
+    top: 22.5%;
+  }
+  .headline .bio-container {
+    width: 40rem;
+  }
+  #bio-page {
+    height: 300vh;
+  }
+  #bio-page .bio-creative {
+    top: 31%;
+  }
+  #bio-page .bio-creative .bio-heading {
+    font-size: 4rem;
+  }
+  #bio-page .bio-creative .bio-par {
+    font-size: 1.8rem;
+  }
+  #bio-page .bio-tech {
+    top: 45%;
+  }
+  #bio-page .bio-tech .bio-heading {
+    font-size: 4.25rem;
+  }
+  #bio-page .bio-tech .bio-par {
+    font-size: 1.9rem;
+  }
+  #bio-page .bio-personal .bio-heading {
+    font-size: 4.1rem;
+  }
+  #bio-page .bio-personal .bio-par {
+    font-size: 1.85rem;
+  }
+  .bio-title {
+    font-size: 3.8rem;
+    width: 62%;
+  }
+  #skills-page .skills-title {
+    top: -27rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

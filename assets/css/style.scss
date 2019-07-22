@@ -394,7 +394,7 @@ body {
     position: relative;
     z-index: 300;
     width: 100vw;
-    height: 450vh;
+    height: 500vh;
     background-color: $silk-white;
     transform: translate3d(0,0,0);
     border-top: .1rem solid $flat-blue;
@@ -443,7 +443,7 @@ body {
             color: $flat-yellow;
             font-family: inherit;
             font-weight: 100;
-            font-size: 12vh;
+            font-size: 10vh;
             border-right: solid 1rem $silk-blue-2;
             text-align: right;
             padding-right: 1.5rem;
@@ -456,7 +456,7 @@ body {
             width: 90%;
             text-align: left;
             line-height: 1.75;
-            font-size: 5vh;
+            font-size: 4.3vh;
             font-weight: bolder;
         }
     }
@@ -465,7 +465,7 @@ body {
         background-color: $matte-white;
         top: 52.5%;
         right: 1%;
-        width: 60%;
+        width: 65%;
         z-index: 150;
 
         &::before {
@@ -498,7 +498,7 @@ body {
             width: 90%;
             text-align: left;
             line-height: 1.75;
-            font-size: 5vh;
+            font-size: 4.75vh;
             font-weight: bolder;
         }
     }
@@ -525,7 +525,7 @@ body {
             content: '';
             position: absolute;
             top: 15rem;
-            left: 15%;
+            left: 9%;
             width: 1.5%;
             height: 75%;
             background: $flat-red-2; 
@@ -538,7 +538,7 @@ body {
             color: $flat-orange;
             font-family: inherit;
             font-weight: 100;
-            font-size: 12vh;
+            font-size: 11vh;
             text-align: left;
             padding-left: 1.5rem;
             margin-bottom: 2rem;
@@ -546,11 +546,11 @@ body {
 
         .bio-par {
             color: $matte-black;
-            padding-left: 15%;
+            padding-left: 10%;
             width: 90%;
             text-align: left;
             line-height: 1.75;
-            font-size: 5vh;
+            font-size: 4.3vh;
             font-weight: bolder;
         }
     }
@@ -566,7 +566,6 @@ body {
     z-index: 305;
     font-size: 8rem;
     top: 30%;
-    left: -50%;
     left: 40%;
     padding: 2rem 4rem;
     color: $silk-white;
@@ -614,7 +613,7 @@ body {
         font-size: 10rem;
         text-align: right;
         padding: 2rem 5rem 0 0;
-        top: -75rem;
+        top: -35rem;
         text-shadow: 0 .25rem 0 rgba($matte-gray-light, 0.4);
     }
 
@@ -887,7 +886,7 @@ body {
                 }
 
                 &-content {
-                    margin: 4rem auto 2rem 0;
+                    margin: 2.5rem auto 2rem 0;
                 }
             }
         }
@@ -937,7 +936,7 @@ body {
                 }
 
                 &-content {
-                    margin: 4rem 0 2rem auto;
+                    margin: 2.5rem 0 2rem auto;
                 }
             }
         }
@@ -1005,8 +1004,8 @@ body {
                 position: absolute;
                 top: 0;
                 height: 100%;
-                width: 56%;
-                padding: 3.5rem;
+                width: 66%;
+                padding: 1.75rem 3.5rem 2rem;
 
                 &-header {
                     font-size: 3.8rem;
@@ -1021,7 +1020,7 @@ body {
                     color: $silk-blue-5;
                     text-align: center;
                     line-height: 1.7;
-                    margin: 2rem 0 0rem;
+                    margin: 0;
                 }
 
                 &-list {
@@ -1261,7 +1260,7 @@ body {
     left: 0;
     background-color: #d82433;
     height: 208vh;
-    width: 33vw;
+    width: 26vw;
     background: 
         radial-gradient(black 1.2rem, transparent 1.5rem),
         linear-gradient(rgba(255, 255, 255, 0) 4px, transparent 0),
@@ -1269,7 +1268,7 @@ body {
         linear-gradient(-90deg, transparent 51px, transparent 52px, $flat-black 52px, $flat-black 53px, transparent 54px, transparent 75px),
         rgba(255, 255, 255, 0);
     background-size: 5rem 5rem,100% 6px, 5rem 5rem, 5rem 5rem;
-    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    background-position: 100% 100%, 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
 }
 
 .quote {
@@ -1421,7 +1420,11 @@ body {
     }
 
     #projects-page {
-        height: 400vh;
+        height: 360vh;
+
+        .projects-title {
+            font-size: 8rem;
+        }
 
         .projects-box {
             right: 2.5%;
@@ -1430,6 +1433,14 @@ body {
             .project {
                 height: 40rem;
 
+                &:nth-child(even),
+                &:nth-child(odd) {
+
+                    .project-btn {
+                        font-size: 2rem;
+                    }
+                }
+
                 &-image {
 
                     &-caption {
@@ -1437,7 +1448,38 @@ body {
                         &-header {
                             font-size: 2.5rem;
                         }
+
+                        &-sub-header {
+                            font-size: 2rem;
+                        }
+
+                        &-list {
+                            font-size: 1.8rem;
+
+                        }
+
+                        &-content {
+                            font-size: 1.5rem;
+                            width: 85%;
+                            padding-top: -4rem;
+                        }
                     }
+                }
+            }
+
+            &:nth-child(even) {
+
+                .project-image-caption {
+
+                    // padding: 3rem 0rem 3rem 2rem;
+                }
+            }
+
+            &:nth-child(odd) {
+
+                .project-image-caption {
+
+                    // padding: 3rem 2rem 3rem 0rem;
                 }
             }
         }
@@ -1501,6 +1543,12 @@ body {
 @media only screen and (max-width: 850px) {
 
     .headline {
+
+        .left-background {
+            left: .5rem;
+            top: .5rem;
+        }
+
 
         .nav-list {
             width: 20rem;
@@ -1601,6 +1649,165 @@ body {
             .soft-skills {
                 width: 69vw;
             }
+        }
+    }
+
+    #projects-page {
+        height: 350vh;
+
+        .projects-title {
+            top: 19rem;
+            font-size: 6.5rem;
+        }
+
+        .projects-box {
+            width: 75vw;
+            
+        }
+    }
+}
+
+@media only screen and (max-width: 760px) {
+
+
+    .headline {
+
+        min-height: 175vh;
+
+        .name {
+            font-size: 7rem;
+
+            &-container {
+                left: 40%;
+                top: 20%;
+            }
+        }
+
+        .bio {
+            font-size: 4rem;
+
+            &-container {
+                width: 50rem;
+            }
+        }
+    }
+
+    #bio-page {
+
+        .bio-tech {
+
+            .bio-heading {
+                font-size: 4.75rem;
+            }
+
+            .bio-par {
+                font-size: 2.3rem;
+            }
+        }
+
+    }
+
+    .bio-title {
+        font-size: 4.6rem;
+        width: 60%;
+        left: 30%;
+    }
+
+    #skills-page {
+        height: 220vh;
+    }
+
+    .intersect-1 {
+        width: 25vw;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    #skills-page {
+
+        .skills-title {
+            top: -32rem;
+            font-size: 5.25rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 620px) {
+
+    .headline {
+
+        min-height: 150vh;
+
+        .name {
+            font-size: 6rem;
+
+            &-container {
+                top: 22.5%;
+            }
+        }
+
+        .bio {
+
+            &-container {
+                width: 40rem;
+            }
+        }
+    }
+
+    #bio-page {
+
+        height: 300vh;
+        .bio-box {
+
+        }
+
+        .bio-creative {
+            top: 31%;
+
+            .bio-heading {
+                font-size: 4rem;
+            }
+
+            .bio-par {
+                font-size: 1.8rem;
+            }
+        }
+
+        .bio-tech {
+            top: 45%;
+
+            .bio-heading {
+                font-size: 4.25rem;
+            }
+
+            .bio-par {
+                font-size: 1.9rem;
+            }
+        }
+
+        .bio-personal {
+
+            .bio-heading {
+                font-size: 4.1rem;
+            }
+
+            .bio-par {
+                font-size: 1.85rem;
+            }
+        }
+
+    }
+
+    .bio-title {
+        font-size: 3.8rem;
+        width: 62%;
+    }
+
+    #skills-page {
+
+        .skills-title {
+            top: -27rem;
         }
     }
 }

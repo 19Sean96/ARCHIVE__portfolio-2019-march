@@ -43,10 +43,11 @@ window.onscroll = function() {
     position = position * ( window.innerHeight / 722 );
     topPos = position / 500;
     console.log(window.innerHeight);
-    console.log(position);
+    // console.log(position);
 
     if (window.innerWidth < 850) {
         position = position * 1.2;
+        console.log(position);
     }
 
     nameContainer.css({
@@ -90,6 +91,7 @@ window.onscroll = function() {
 
 
         bioPosition = position - 1400;
+        skillsPosition = position - 3000
         bioCreative.css(
             "transform",
             `translate3d(0rem, ${bioPosition /
@@ -113,13 +115,19 @@ window.onscroll = function() {
                 "transform",
                 `translate3d(0rem, ${bioPosition / 50}rem,0rem)`
             );
+        }
 
+        if (position >= 3000 && window.innerWidth < 620 && position <= 4000) {
+            skillsTitle.css(
+                "transform",
+                `translate3d(0rem, ${skillsPosition /1}rem,0rem)`
+            );
         }
 
         if (position > 4000) {
             skillsTitle.css(
                 "transform",
-                `translate3d(0rem, ${bioPosition / 40}rem,0rem)`
+                `translate3d(0rem, ${skillsPosition / 40}rem,0rem)`
             );
         }
         if (position > 5500) {
