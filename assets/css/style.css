@@ -569,7 +569,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 10rem;
   text-align: right;
   padding: 2rem 5rem 0 0;
-  top: -35rem;
+  top: -40rem;
   text-shadow: 0 0.25rem 0 rgba(140, 138, 135, 0.4);
 }
 
@@ -1391,9 +1391,11 @@ body::-webkit-scrollbar-thumb {
   }
   .headline .nav-list {
     width: 20rem;
+    padding-top: 1.5rem;
   }
   .headline .nav-list-item {
     font-size: 2.25rem;
+    margin-left: 5%;
   }
   .headline .nav-list-item:not(#resume)::before {
     bottom: .25rem;
@@ -1524,6 +1526,18 @@ body::-webkit-scrollbar-thumb {
   .headline {
     min-height: 150vh;
   }
+  .headline .left-background {
+    left: -1rem;
+  }
+  .headline .nav-list {
+    width: 17.5rem;
+    padding-top: 1rem;
+  }
+  .headline .nav-list-item {
+    margin-left: 2%;
+    font-size: 1.75rem;
+    margin-bottom: .45rem;
+  }
   .headline .name {
     font-size: 6rem;
   }
@@ -1563,9 +1577,82 @@ body::-webkit-scrollbar-thumb {
   .bio-title {
     font-size: 3.8rem;
     width: 62%;
+    top: 0rem;
+  }
+  #skills-page {
+    height: 165vh;
   }
   #skills-page .skills-title {
     top: -27rem;
+  }
+  #skills-page .skills-box {
+    left: 26%;
+    font-size: 2.5rem;
+  }
+  #skills-page .skills-box .hard-skills,
+  #skills-page .skills-box .soft-skills {
+    width: 69vw;
+  }
+  #skills-page .skills-box .hard-skills .skill-list-item,
+  #skills-page .skills-box .soft-skills .skill-list-item {
+    font-size: 2rem;
+  }
+  #skills-page .skills-box .hard-skills .skill-list-item-data::before,
+  #skills-page .skills-box .soft-skills .skill-list-item-data::before {
+    font-size: 1.5rem;
+  }
+  #projects-page .projects-title {
+    top: 25rem;
+  }
+  #projects-page .projects-box {
+    width: 72vw;
+    min-height: 10rem;
+    right: 0;
+  }
+  #projects-page .projects-box .project {
+    height: 32.5rem;
+  }
+  #projects-page .projects-box .project:nth-child(even) .project-btn, #projects-page .projects-box .project:nth-child(odd) .project-btn {
+    font-size: 1.5rem;
+  }
+  #projects-page .projects-box .project:nth-child(even) .project-btn-container, #projects-page .projects-box .project:nth-child(odd) .project-btn-container {
+    padding: 1rem 2rem;
+  }
+  #projects-page .projects-box .project-image {
+    background-size: cover, 50% 50%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  #projects-page .projects-box .project-image-caption {
+    width: 82.5%;
+  }
+  #projects-page .projects-box .project-image-caption-header {
+    font-size: 1.8rem;
+  }
+  #projects-page .projects-box .project-image-caption-sub-header {
+    font-size: 1.7rem;
+  }
+  #projects-page .projects-box .project-image-caption-list {
+    font-size: 1.5rem;
+  }
+  #projects-page .projects-box .project-image-caption-content {
+    font-size: 1.1rem;
+  }
+  #contact-page .contact-title {
+    font-size: 3.75rem;
+  }
+  #contact-page .contact-form-container {
+    width: 60vw;
+  }
+  #contact-page .contact-form .input {
+    width: 90%;
+    font-size: 2.25rem;
+  }
+  #contact-page .contact-form .input-container .placeholder-message {
+    font-size: 2.25rem;
+  }
+  #contact-page .contact-form label {
+    font-size: 1.25rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -35,6 +35,7 @@ const projectsBox = $(".projects-box");
 let enteredBio = false;
 let prevPos;
 let bioPosition = 0;
+let skillsPosition = 0;
 window.onscroll = function() {
     // console.log(window.screen.availHeight);
     let position =
@@ -42,7 +43,7 @@ window.onscroll = function() {
 
     position = position * ( window.innerHeight / 722 );
     topPos = position / 500;
-    console.log(window.innerHeight);
+    // console.log(window.innerHeight);
     // console.log(position);
 
     if (window.innerWidth < 850) {
@@ -117,24 +118,41 @@ window.onscroll = function() {
             );
         }
 
-        if (position >= 3000 && window.innerWidth < 620 && position <= 4000) {
+        if (position >= 3000 && window.innerWidth < 700 && position <= 4000) {
+            console.log(window.innerWidth);
             skillsTitle.css(
                 "transform",
-                `translate3d(0rem, ${skillsPosition /1}rem,0rem)`
+                `translate3d(0rem, ${skillsPosition / 30}rem,0rem)`
             );
+
+            if (window.innerWidth < 650) {
+                skillsTitle.css(
+                    "transform",
+                    `translate3d(0rem, ${skillsPosition / 20}rem,0rem)`
+                );
+            }
         }
 
         if (position > 4000) {
-            skillsTitle.css(
-                "transform",
-                `translate3d(0rem, ${skillsPosition / 40}rem,0rem)`
-            );
+            // skillsPosition = position - 4000;
+
+            if (window.innerWidth >= 650) {
+                skillsTitle.css(
+                    "transform",
+                    `translate3d(0rem, ${(skillsPosition / 38) + 7.5}rem,0rem)`
+                );
+            } else {
+                skillsTitle.css(
+                    "transform",
+                    `translate3d(0rem, ${(skillsPosition / 20)}rem,0rem)`
+                );
+            }
         }
         if (position > 5500) {
             bioPosition = position - 5500;
             projectsBox.css(
                 "transform",
-                `translate3d(0rem, ${bioPosition / -47}rem,0rem)`
+                `translate3d(0rem, ${(bioPosition / -60)}rem,0rem)`
             );
         }
     }

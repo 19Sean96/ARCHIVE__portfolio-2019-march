@@ -613,7 +613,7 @@ body {
         font-size: 10rem;
         text-align: right;
         padding: 2rem 5rem 0 0;
-        top: -35rem;
+        top: -40rem;
         text-shadow: 0 .25rem 0 rgba($matte-gray-light, 0.4);
     }
 
@@ -1552,9 +1552,11 @@ body {
 
         .nav-list {
             width: 20rem;
+            padding-top: 1.5rem;
             
             &-item {
                 font-size: 2.25rem;
+                margin-left: 5%;
 
                 &:not(#resume)::before {
                     bottom: .25rem;
@@ -1739,6 +1741,21 @@ body {
 
         min-height: 150vh;
 
+        .left-background {
+            left: -1rem;
+        }
+
+        .nav-list {
+            width: 17.5rem;
+            padding-top: 1rem;
+
+            &-item {
+                margin-left: 2%;
+                font-size: 1.75rem;
+                margin-bottom: .45rem;
+            }
+        }
+
         .name {
             font-size: 6rem;
 
@@ -1802,12 +1819,125 @@ body {
     .bio-title {
         font-size: 3.8rem;
         width: 62%;
+        top: 0rem;
     }
 
     #skills-page {
+        height: 165vh;
 
         .skills-title {
             top: -27rem;
+        }
+
+        .skills-box {
+            left: 26%;
+            font-size: 2.5rem;
+
+            .hard-skills,
+            .soft-skills {
+                width: 69vw;
+
+                .skill-list {
+
+                    &-item {
+                        font-size: 2rem;
+
+                        &-data {
+
+                            &::before {
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #projects-page {
+
+        .projects-title {
+            top: 25rem;
+        }
+
+        .projects-box {
+            width: 72vw;
+            min-height: 10rem;
+            right: 0; 
+            
+            .project {
+                height: 32.5rem;
+
+                &:nth-child(even),
+                &:nth-child(odd) {
+                    .project-btn {
+                        font-size: 1.5rem;
+                        &-container {
+                            padding: 1rem 2rem;
+                        }
+                    }
+                }
+
+
+
+                &-image {
+                    background-size: cover, 50% 50%;
+                    transform: scale(1);
+
+                    &-caption {
+                        width: 82.5%;
+
+                        &-header {
+                            font-size: 1.8rem;
+                        }
+
+                        &-sub-header {
+                            font-size: 1.7rem;
+                        }
+
+                        &-list {
+                            font-size: 1.5rem;
+                        }
+
+                        &-content {
+                            font-size: 1.1rem;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    #contact-page {
+
+        .contact-title {
+            font-size: 3.75rem;
+        }
+
+        .contact-form {
+
+            &-container {
+                width: 60vw;
+            }
+
+            .input {
+                width: 90%;
+                font-size: 2.25rem;
+
+                &-container {
+
+                    .placeholder-message {
+                        font-size: 2.25rem;
+                    }
+                }
+
+            }
+
+            
+            label {
+                font-size: 1.25rem;
+            }
         }
     }
 }
