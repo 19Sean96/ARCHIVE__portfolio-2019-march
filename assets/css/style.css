@@ -240,7 +240,7 @@ body::-webkit-scrollbar-thumb {
   line-height: 1.75;
   color: #f2a007;
   text-decoration: none;
-  font-size: 3.25rem;
+  font-size: 4.52vh;
   background-color: #0c0c0c;
   width: 80%;
   text-align: left;
@@ -258,7 +258,7 @@ body::-webkit-scrollbar-thumb {
 .headline .nav-list-item:not(#resume)::before {
   z-index: -1;
   content: "";
-  font-size: 3rem;
+  font-size: calc(3 / .72) vh;
   position: absolute;
   bottom: 1.25rem;
   left: -1rem;
@@ -273,7 +273,7 @@ body::-webkit-scrollbar-thumb {
 .headline .nav-list-item:not(#resume)::after {
   z-index: -1;
   content: "";
-  font-size: 3rem;
+  font-size: calc(3 / .72) vh;
   position: absolute;
   top: 1.25rem;
   right: 1rem;
@@ -329,7 +329,7 @@ body::-webkit-scrollbar-thumb {
 .headline .nav-list #resume:before {
   position: absolute;
   content: "Download";
-  font-size: 2.75rem;
+  font-size: calc(2.75 / .72) vh;
   color: rgba(12, 12, 12, 0);
   text-align: center;
   overflow: hidden;

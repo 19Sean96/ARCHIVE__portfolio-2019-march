@@ -36,12 +36,16 @@ let enteredBio = false;
 let prevPos;
 let bioPosition = 0;
 let skillsPosition = 0;
+
+let windowHeight;
 window.onscroll = function() {
+    windowHeight = window.innerHeight;
+    console.log(windowHeight);
     // console.log(window.screen.availHeight);
     let position =
         document.documentElement.scrollTop || document.body.scrollTop;
 
-    position = position * ( window.innerHeight / 722 );
+    position = position / ( window.innerHeight / 722 );
     topPos = position / 500;
     // console.log(window.innerHeight);
     // console.log(position);

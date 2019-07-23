@@ -203,7 +203,7 @@ body {
   text-rendering: geometricPrecision;
   color: $flat-yellow-accent;
   font-weight: 100;
-  font-size: 15vh;
+  font-size: 15vh; //7.2rem per vh
   width: 100%;
 
   &-container {
@@ -278,7 +278,7 @@ body {
       line-height: 1.75;
       color: $flat-yellow-accent;
       text-decoration: none;
-      font-size: 3.25rem;
+      font-size: 4.52vh;
       background-color: $flat-black;
       width: 80%;
       text-align: left;
@@ -294,7 +294,7 @@ body {
       &:not(#resume)::before {
         z-index: -1;
         content: "";
-        font-size: 3rem;
+        font-size: calc(3 / .72)vh;
         position: absolute;
         bottom: 1.25rem;
         left: -1rem;
@@ -308,7 +308,7 @@ body {
       &:not(#resume)::after {
         z-index: -1;
         content: "";
-        font-size: 3rem;
+        font-size: calc(3 / .72)vh;
         position: absolute;
         top: 1.25rem;
         right: 1rem;
@@ -355,7 +355,7 @@ body {
       &:before {
         position: absolute;
         content: "Download";
-        font-size: 2.75rem;
+        font-size: calc(2.75 / .72)vh;
         color: rgba($flat-black, 0);
         text-align: center;
         overflow: hidden;
