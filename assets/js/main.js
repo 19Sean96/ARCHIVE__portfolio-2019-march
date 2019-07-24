@@ -45,10 +45,10 @@ window.onscroll = function() {
     let position =
         document.documentElement.scrollTop || document.body.scrollTop;
 
-    position = position / ( window.innerHeight / 722 );
+    // position = position / ( window.innerHeight / 722 );
     topPos = position / 500;
     // console.log(window.innerHeight);
-    // console.log(position);
+    console.log(position);
 
     if (window.innerWidth < 850) {
         position = position * 1.2;
@@ -80,10 +80,9 @@ window.onscroll = function() {
                 && position < (1374 * (window.innerHeight / 722))) {
         enteredBio = true;
         bioPosition = position - 700;
-        // bioTitle.css({
-        //     transform: `translate3d(${bioPosition / 5}rem,${bioPosition / -70}rem, 0rem)`
-        // }).removeClass('zoomOut').addClass('fadeIn');
-        if (position > 800) {
+        bioTitle
+
+        if (position > 800 * (window.innerHeight / 722) ) {
             bioTitle
                 .removeClass("zoomOut")
                 .addClass("zoomIn")
@@ -92,8 +91,15 @@ window.onscroll = function() {
                     opacity: "1"
                 });
         }
-    } else if (position >= 1400) {
+    } else if (position >= (1400 * (window.innerHeight / 722) ) ) {
 
+        bioTitle
+        .removeClass("zoomIn")
+        .addClass("zoomOut")
+        .css({
+            display: "block",
+            opacity: "1"
+        });
 
         bioPosition = position - 1400;
         skillsPosition = position - 3000
@@ -107,22 +113,22 @@ window.onscroll = function() {
             `translate3d(0rem, ${bioPosition / -100}rem,0rem)`
         );
 
-        if (position > 1550) {
+        if (position > 1550 * (window.innerHeight / 722)) {
             bioTitle.removeClass("zoomIn").addClass("zoomOut");
         }
 
-        if (position > 1750) {
+        if (position > 1750 * (window.innerHeight / 722)) {
             bioTitle.css("display", "none");
         }
 
-        if (position >= 2000) {
+        if (position >= 2000 * (window.innerHeight / 722)) {
             bioPersonal.css(
                 "transform",
                 `translate3d(0rem, ${bioPosition / 50}rem,0rem)`
             );
         }
 
-        if (position >= 3000 && window.innerWidth < 700 && position <= 4000) {
+        if (position >= 3000 * (window.innerHeight / 722) && window.innerWidth < 700 && position <= 4000  * (window.innerHeight / 722)) {
             console.log(window.innerWidth);
             skillsTitle.css(
                 "transform",
@@ -137,7 +143,7 @@ window.onscroll = function() {
             }
         }
 
-        if (position > 4000) {
+        if (position > 4000 * (window.innerHeight / 722)) {
             // skillsPosition = position - 4000;
 
             if (window.innerWidth >= 650) {
@@ -152,7 +158,7 @@ window.onscroll = function() {
                 );
             }
         }
-        if (position > 5500) {
+        if (position > 5500  * (window.innerHeight / 722)) {
             bioPosition = position - 5500;
             projectsBox.css(
                 "transform",
@@ -283,6 +289,23 @@ window.setInterval(switchText, 1500);
 // },
 // 100);
 
+// const nameContainer = $(".name-container");
+// const bioContainer = $(".bio-container");
+// const bioPage = $("#bio-page");
+// const bioTitle = $(".bio-title");
+// const bioCreative = $(".bio-creative");
+// const bioTech = $(".bio-tech");
+// const bioPersonal = $(".bio-personal");
+// const inter1 = $(".intersect-1");
+// const skillsTitle = $(".skills-title");
+// const projectsBox = $(".projects-box");
+
+let vhDefault = 722;
+
 window.addEventListener('resize' , function(e) {
     console.log(e.target.innerHeight);
+
+    // bioPage.css({
+    //     min-height: ``
+    // })
 });
